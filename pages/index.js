@@ -36,6 +36,8 @@ export default function Home() {
   };
 }, []);
   const handlePiPayment = async () => {
+    alert("MathSpark button works!");
+    
   if (!window.Pi) {
     alert("Pi SDK belum ready. Sila buka app dalam Pi Browser.");
     return;
