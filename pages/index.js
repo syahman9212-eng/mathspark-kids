@@ -34,7 +34,6 @@ export default function Home() {
 }, []);
 
 const handlePiPayment = async () => {
-  alert("Payment button started");
 
   if (!window.Pi) {
     alert("Pi SDK not loaded. Please open this app in Pi Browser.");
