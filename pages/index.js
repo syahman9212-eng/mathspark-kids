@@ -14,13 +14,6 @@ export default function Home() {
         sandbox: false,
       });
 
-      await window.Pi.authenticate(
-        ["username", "payments"],
-        (payment) => {
-          console.log("Incomplete payment:", payment);
-        }
-      );
-
       console.log("Pi SDK ready");
     } catch (error) {
       console.error("Pi authentication error:", error);
