@@ -44,13 +44,24 @@ export default function Home() {
   }
 
     try {
-  await window.Pi.authenticate(
+  alert("Starting Pi authentication...");
+
+  const auth = await window.Pi.authenticate(
     ["username", "payments"],
     (payment) => {
       console.log("Incomplete payment:", payment);
     }
   );
+
+  alert("Pi authentication SUCCESS: " + auth.user.username);
+
 } catch (error) {
+  alert(
+    "Pi authentication ERROR: " +
+    (error?.message || JSON.stringify(error))
+  );
+  return;
+     }
   alert("Pi authentication gagal: " + error.message);
   return;
 }
