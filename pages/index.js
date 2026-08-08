@@ -3,100 +3,132 @@ import Head from "next/head";
 import { useEffect } from "react";
 export default function Home() {
   useEffect(() => {
-  const script = document.createElement("script");
-  script.src = "https://sdk.minepi.com/pi-sdk.js";
-  script.async = true;
+  const existingScript = document.querySelector(
+    'script[src="https://sdk.minepi.com/pi-sdk.js"]'
+  );
 
-  script.onload = async () => {
-    try {
+  const initPi = () => {
+    if (window.Pi) {
       window.Pi.init({
         version: "2.0",
-        sandbox: false,
       });
 
-      console.log("Pi SDK ready");
-    } catch (error) {
-      console.error("Pi authentication error:", error);
+      console.log("Pi SDK initialized");
     }
   };
 
-  document.body.appendChild(script);
-
-  return () => {
-    if (document.body.contains(script)) {
-      document.body.removeChild(script);
-    }
-  };
-}, []);
-  const handlePiPayment = async () => {
-    alert("MathSpark button works!");
-    
-  if (!window.Pi) {
-    alert("Pi SDK belum ready. Sila buka app dalam Pi Browser.");
+  if (existingScript) {
+    initPi();
     return;
   }
 
-    try {
-  alert("Starting Pi authentication...");
+  const script = document.createElement("script");
+  script.src = "https://sdk.minepi.com/pi-sdk.js";
+  script.async = true;
+  script.onload = initPi;
+  script.onerror = () => {
+    console.error("Failed to load Pi SDK");
+  };
 
-  const auth = await window.Pi.authenticate(
-    ["username"],
-    (payment) => {
-      console.log("Incomplete payment:", payment);
-    }
-  );
+  document.body.appendChild(script);
+}, []);
 
-  alert("Pi authentication SUCCESS: " + auth.user.username);
+const handlePiPayment = async () => {
+  alert("Payment button started");
 
-} catch (error) {
-  alert(
-    "Pi authentication ERROR: " +
-    (error?.message || JSON.stringify(error))
-  );
-  return;
-     }
+  if (!window.Pi) {
+    alert("Pi SDK not loaded. Please open this app in Pi Browser.");
+    return;
+  }
 
-  window.Pi.createPayment(
-    {
-      amount: 0.01,
-      memo: "MathSpark Kids Testnet access",
-      metadata: {
-        product: "mathspark-kids-access",
+  try {
+    const auth = await window.Pi.authenticate(
+      ["username", "payments"],
+      async (payment) => {
+        console.log("Incomplete payment found:", payment);
+
+        if (payment?.identifier && payment?.transaction?.txid) {
+          await fetch("/api/complete", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentId: payment.identifier,
+              txid: payment.transaction.txid,
+            }),
+          });
+        }
+      }
+    );
+
+    alert("Signed in as: " + auth.user.username);
+
+    window.Pi.createPayment(
+      {
+        amount: 0.01,
+        memo: "MathSpark Kids Testnet access",
+        metadata: {
+          product: "mathspark-kids-access",
+        },
       },
-    },
-    {
-      onReadyForServerApproval: async (paymentId) => {
-        await fetch("/api/approve", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ paymentId }),
-        });
-      },
+      {
+        onReadyForServerApproval: async (paymentId) => {
+          const response = await fetch("/api/approve", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentId,
+            }),
+          });
 
-      onReadyForServerCompletion: async (paymentId, txid) => {
-        await fetch("/api/complete", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ paymentId, txid }),
-        });
+          if (!response.ok) {
+            alert("Server approval failed");
+          }
+        },
 
-        alert("Payment completed!");
-      },
+        onReadyForServerCompletion: async (paymentId, txid) => {
+          const response = await fetch("/api/complete", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentId,
+              txid,
+            }),
+          });
 
-      onCancel: (paymentId) => {
-        console.log("Payment cancelled:", paymentId);
-      },
+          if (response.ok) {
+            alert("Payment completed!");
+          } else {
+            alert("Payment completion failed");
+          }
+        },
 
-      onError: (error) => {
-        console.error("Payment error:", error);
-        alert("Payment error. Please try again.");
-      },
-    }
-  );
+        onCancel: (paymentId) => {
+          console.log("Payment cancelled:", paymentId);
+        },
+
+        onError: (error) => {
+          console.error("Payment error:", error);
+          alert(
+            "Payment error: " +
+              (error?.message || JSON.stringify(error))
+          );
+        },
+      }
+    );
+  } catch (error) {
+    console.error("Pi authentication error:", error);
+
+    alert(
+      "Authentication error: " +
+        (error?.message || JSON.stringify(error))
+    );
+  }
 };
   return (
     <>
