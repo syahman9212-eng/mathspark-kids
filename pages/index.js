@@ -61,7 +61,6 @@ const handlePiPayment = async () => {
       }
     );
 
-    alert("Signed in as: " + auth.user.username);
 
     window.Pi.createPayment(
       {
