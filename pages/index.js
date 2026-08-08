@@ -1,7 +1,40 @@
 
 import Head from "next/head";
-
+import { useEffect } from "react";
 export default function Home() {
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://sdk.minepi.com/pi-sdk.js";
+  script.async = true;
+
+  script.onload = async () => {
+    try {
+      window.Pi.init({
+        version: "2.0",
+        sandbox: true,
+      });
+
+      await window.Pi.authenticate(
+        ["username", "payments"],
+        (payment) => {
+          console.log("Incomplete payment:", payment);
+        }
+      );
+
+      console.log("Pi SDK ready");
+    } catch (error) {
+      console.error("Pi authentication error:", error);
+    }
+  };
+
+  document.body.appendChild(script);
+
+  return () => {
+    if (document.body.contains(script)) {
+      document.body.removeChild(script);
+    }
+  };
+}, []);
   return (
     <>
       <Head>
