@@ -62,9 +62,6 @@ export default function Home() {
   );
   return;
      }
-  alert("Pi authentication gagal: " + error.message);
-  return;
-}
 
   window.Pi.createPayment(
     {
