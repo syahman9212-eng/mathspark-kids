@@ -40,7 +40,7 @@ export default function Home() {
   alert("Starting Pi authentication...");
 
   const auth = await window.Pi.authenticate(
-    ["username", "payments"],
+    ["username"],
     (payment) => {
       console.log("Incomplete payment:", payment);
     }
