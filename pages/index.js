@@ -35,6 +35,54 @@ export default function Home() {
     }
   };
 }, []);
+  const handlePiPayment = () => {
+  if (!window.Pi) {
+    alert("Pi SDK belum ready. Sila buka app dalam Pi Browser.");
+    return;
+  }
+
+  window.Pi.createPayment(
+    {
+      amount: 0.01,
+      memo: "MathSpark Kids Testnet access",
+      metadata: {
+        product: "mathspark-kids-access",
+      },
+    },
+    {
+      onReadyForServerApproval: async (paymentId) => {
+        await fetch("/api/approve", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ paymentId }),
+        });
+      },
+
+      onReadyForServerCompletion: async (paymentId, txid) => {
+        await fetch("/api/complete", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ paymentId, txid }),
+        });
+
+        alert("Payment completed!");
+      },
+
+      onCancel: (paymentId) => {
+        console.log("Payment cancelled:", paymentId);
+      },
+
+      onError: (error) => {
+        console.error("Payment error:", error);
+        alert("Payment error. Please try again.");
+      },
+    }
+  );
+};
   return (
     <>
       <Head>
@@ -68,7 +116,9 @@ export default function Home() {
 
             <div className="card">
               <div className="price">Full Access • $6 USD</div>
-              <button>⚡ Buy Access with Pi</button>
+              <button onClick={handlePiPayment}>
+  ⚡ Buy Access with Pi
+</button>
               <small>Payment using Pi Network</small>
             </div>
           </div>
