@@ -35,11 +35,23 @@ export default function Home() {
     }
   };
 }, []);
-  const handlePiPayment = () => {
+  const handlePiPayment = async () => {
   if (!window.Pi) {
     alert("Pi SDK belum ready. Sila buka app dalam Pi Browser.");
     return;
   }
+
+    try {
+  await window.Pi.authenticate(
+    ["username", "payments"],
+    (payment) => {
+      console.log("Incomplete payment:", payment);
+    }
+  );
+} catch (error) {
+  alert("Pi authentication gagal: " + error.message);
+  return;
+}
 
   window.Pi.createPayment(
     {
