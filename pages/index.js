@@ -245,29 +245,36 @@ if (premiumResponse.ok && premiumResult.premium) {
       <p>Let&apos;s learn simple addition.</p>
 
       <div className="quizCard">
-        
-<div className="quizQuestion">
-  {questions[currentQuestion].question} = ?
-
-<button
-  className="answerButton"
-  onClick={() => handleAnswer(questions[currentQuestion].answers[0])}
->
-  {questions[currentQuestion].answers[0]}
-</button>
-        <button
-  className="answerButton"
-  onClick={() => handleAnswer(questions[currentQuestion].answers[1])}
->
-  {questions[currentQuestion].answers[1]}
-</button>
+        <div className="quizQuestion">
+          {questions[currentQuestion].question} = ?
+        </div>
 
         <button
-  className="answerButton"
-  onClick={() => handleAnswer(questions[currentQuestion].answers[2])}
->
-  {questions[currentQuestion].answers[2]}
-</button>
+          className="answerButton"
+          onClick={() =>
+            handleAnswer(questions[currentQuestion].answers[0])
+          }
+        >
+          {questions[currentQuestion].answers[0]}
+        </button>
+
+        <button
+          className="answerButton"
+          onClick={() =>
+            handleAnswer(questions[currentQuestion].answers[1])
+          }
+        >
+          {questions[currentQuestion].answers[1]}
+        </button>
+
+        <button
+          className="answerButton"
+          onClick={() =>
+            handleAnswer(questions[currentQuestion].answers[2])
+          }
+        >
+          {questions[currentQuestion].answers[2]}
+        </button>
       </div>
     </div>
   </div>
