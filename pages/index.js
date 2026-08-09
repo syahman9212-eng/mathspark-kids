@@ -3,6 +3,55 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 export default function Home() { 
   const [isPremium, setIsPremium] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+const [score, setScore] = useState(0);
+const [feedback, setFeedback] = useState("");
+
+const questions = [
+  {
+    question: "5 + 3",
+    answers: [8, 7, 9],
+    correct: 8,
+  },
+  {
+    question: "6 + 4",
+    answers: [9, 10, 11],
+    correct: 10,
+  },
+  {
+    question: "7 + 2",
+    answers: [8, 9, 10],
+    correct: 9,
+  },
+  {
+    question: "4 + 5",
+    answers: [9, 8, 10],
+    correct: 9,
+  },
+  {
+    question: "8 + 3",
+    answers: [10, 11, 12],
+    correct: 11,
+  },
+];
+  const handleAnswer = (answer) => {
+  if (answer === questions[currentQuestion].correct) {
+    setScore(score + 1);
+    setFeedback("Correct! 🎉");
+
+    setTimeout(() => {
+      setFeedback("");
+
+      if (currentQuestion < questions.length - 1) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        setFeedback("Quiz Complete! 🏆");
+      }
+    }, 800);
+  } else {
+    setFeedback("Try again 😊");
+  }
+};
   useEffect(() => {
   const existingScript = document.querySelector(
     'script[src="https://sdk.minepi.com/pi-sdk.js"]'
@@ -196,28 +245,29 @@ if (premiumResponse.ok && premiumResult.premium) {
       <p>Let&apos;s learn simple addition.</p>
 
       <div className="quizCard">
-        <div className="quizQuestion">5 + 3 = ?</div>
+        
+<div className="quizQuestion">
+  {questions[currentQuestion].question} = ?
+
+<button
+  className="answerButton"
+  onClick={() => handleAnswer(questions[currentQuestion].answers[0])}
+>
+  {questions[currentQuestion].answers[0]}
+</button>
+        <button
+  className="answerButton"
+  onClick={() => handleAnswer(questions[currentQuestion].answers[1])}
+>
+  {questions[currentQuestion].answers[1]}
+</button>
 
         <button
-          className="answerButton"
-          onClick={() => alert("Correct! 🎉")}
-        >
-          8
-        </button>
-
-        <button
-          className="answerButton"
-          onClick={() => alert("Try again 😊")}
-        >
-          7
-        </button>
-
-        <button
-          className="answerButton"
-          onClick={() => alert("Try again 😊")}
-        >
-          9
-        </button>
+  className="answerButton"
+  onClick={() => handleAnswer(questions[currentQuestion].answers[2])}
+>
+  {questions[currentQuestion].answers[2]}
+</button>
       </div>
     </div>
   </div>
