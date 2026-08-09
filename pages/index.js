@@ -188,28 +188,45 @@ if (premiumResponse.ok && premiumResult.premium) {
           </div>
 
           {isPremium ? (
-  <div className="mathArea">
-    <div className="question">⭐ Premium Learning Area</div>
+  <div className="premiumLearningArea">
+    <h2 className="premiumTitle">⭐ Premium Learning Area</h2>
 
     <div className="premiumBox">
       <h2>Lesson 1: Addition</h2>
       <p>Let&apos;s learn simple addition.</p>
 
       <div className="quizCard">
-        <div className="question">5 + 3 = ?</div>
+        <div className="quizQuestion">5 + 3 = ?</div>
 
-        <button onClick={() => alert("Correct! 🎉")}>8</button>
-        <button onClick={() => alert("Try again 😊")}>7</button>
-        <button onClick={() => alert("Try again 😊")}>9</button>
+        <button
+          className="answerButton"
+          onClick={() => alert("Correct! 🎉")}
+        >
+          8
+        </button>
+
+        <button
+          className="answerButton"
+          onClick={() => alert("Try again 😊")}
+        >
+          7
+        </button>
+
+        <button
+          className="answerButton"
+          onClick={() => alert("Try again 😊")}
+        >
+          9
+        </button>
       </div>
     </div>
   </div>
 ) : (
-  <div className="mathArea">
-    <div className="question">🔒 Premium Content Locked</div>
+  <div className="premiumLearningArea">
+    <h2>🔒 Premium Content Locked</h2>
     <p>Buy Full Access to unlock lessons and quizzes.</p>
   </div>
-  )}
+)}
     
         </section>
       </main>
@@ -377,7 +394,47 @@ if (premiumResponse.ok && premiumResult.premium) {
           h1 {
             font-size: 52px;
           }
-        }
+        }.premiumLearningArea {
+  margin-top: 40px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.premiumTitle {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.premiumBox {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.quizCard {
+  margin-top: 24px;
+  background: white;
+  color: #3b167d;
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.quizQuestion {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.answerButton {
+  width: 100%;
+  margin: 8px 0;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+          }
       `}</style>
     </>
   );
