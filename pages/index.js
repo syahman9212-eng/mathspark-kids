@@ -249,6 +249,20 @@ if (premiumResponse.ok && premiumResult.premium) {
           {questions[currentQuestion].question} = ?
         </div>
 
+            <div className="quizProgress">
+  Question {currentQuestion + 1} of {questions.length}
+</div>
+
+<div className="scoreBox">
+  Score: {score} / {questions.length}
+</div>
+
+{feedback && (
+  <div className="feedbackMessage">
+    {feedback}
+  </div>
+)}
+
         <button
           className="answerButton"
           onClick={() =>
@@ -492,6 +506,29 @@ if (premiumResponse.ok && premiumResult.premium) {
   font-weight: 700;
   cursor: pointer;
           }
+          .quizProgress {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b5a8f;
+}
+
+.scoreBox {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3b167d;
+}
+
+.feedbackMessage {
+  margin: 14px 0;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f2ecff;
+  color: #3b167d;
+  font-size: 18px;
+  font-weight: 700;
+}
       `}</style>
     </>
   );
