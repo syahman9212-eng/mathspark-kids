@@ -61,7 +61,16 @@ const handlePiPayment = async () => {
         }
       }
     );
+const premiumResponse = await fetch(
+  `/api/premium?uid=${encodeURIComponent(auth.user.uid)}`
+);
 
+const premiumResult = await premiumResponse.json();
+
+if (premiumResponse.ok && premiumResult.premium) {
+  setIsPremium(true);
+  return;
+}
 
     window.Pi.createPayment(
       {
