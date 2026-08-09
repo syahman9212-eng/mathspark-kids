@@ -1,7 +1,8 @@
 
 import Head from "next/head";
-import { useEffect } from "react";
-export default function Home() {
+import { useEffect, useState } from "react";
+export default function Home() { 
+  const [isPremium, setIsPremium] = useState(false);
   useEffect(() => {
   const existingScript = document.querySelector(
     'script[src="https://sdk.minepi.com/pi-sdk.js"]'
@@ -100,7 +101,7 @@ const handlePiPayment = async () => {
           });
 
           if (response.ok) {
-            alert("Payment completed!");
+            setIsPremium(true);
           } else {
             alert("Payment completion failed");
           }
@@ -160,12 +161,21 @@ const handlePiPayment = async () => {
             </p>
 
             <div className="card">
-              <div className="price">Full Access • $6 USD</div>
-              <button onClick={handlePiPayment}>
-  ⚡ Buy Access with Pi
-</button>
-              <small>Payment using Pi Network</small>
-            </div>
+  {isPremium ? (
+    <>
+      <div className="price">✅ Full Access Unlocked</div>
+      <small>Thank you! Premium content is now available.</small>
+    </>
+  ) : (
+    <>
+      <div className="price">Full Access • $6 USD</div>
+      <button onClick={handlePiPayment}>
+        ⚡ Buy Access with Pi
+      </button>
+      <small>Payment using Pi Network</small>
+    </>
+  )}
+</div>
           </div>
 
           <div className="mathArea">
