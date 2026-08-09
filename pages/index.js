@@ -209,8 +209,8 @@ if (premiumResponse.ok && premiumResult.premium) {
     <div className="question">🔒 Premium Content Locked</div>
     <p>Buy Full Access to unlock lessons and quizzes.</p>
   </div>
-)
-  
+  )}
+    
         </section>
       </main>
 
