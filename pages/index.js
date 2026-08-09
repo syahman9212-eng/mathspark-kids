@@ -187,12 +187,30 @@ if (premiumResponse.ok && premiumResult.premium) {
 </div>
           </div>
 
-          <div className="mathArea">
-            <div className="question">5 + 3 = ?</div>
-            <div className="shape one"></div>
-            <div className="shape two"></div>
-            <div className="shape three"></div>
-          </div>
+          {isPremium ? (
+  <div className="mathArea">
+    <div className="question">⭐ Premium Learning Area</div>
+
+    <div className="premiumBox">
+      <h2>Lesson 1: Addition</h2>
+      <p>Let&apos;s learn simple addition.</p>
+
+      <div className="quizCard">
+        <div className="question">5 + 3 = ?</div>
+
+        <button onClick={() => alert("Correct! 🎉")}>8</button>
+        <button onClick={() => alert("Try again 😊")}>7</button>
+        <button onClick={() => alert("Try again 😊")}>9</button>
+      </div>
+    </div>
+  </div>
+) : (
+  <div className="mathArea">
+    <div className="question">🔒 Premium Content Locked</div>
+    <p>Buy Full Access to unlock lessons and quizzes.</p>
+  </div>
+)
+  
         </section>
       </main>
 
