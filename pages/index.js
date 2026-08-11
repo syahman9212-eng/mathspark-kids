@@ -117,7 +117,7 @@ const premiumResponse = await fetch(
 const premiumResult = await premiumResponse.json();
 
 if (premiumResponse.ok && premiumResult.premium) {
-  setIsPremium(true);
+  window.location.href = "/v12.html";
   return;
 }
 
