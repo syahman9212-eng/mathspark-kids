@@ -1,0 +1,1477 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MathSpark Kids</title><style>
+:root{--ink:#25324a;--muted:#6f7890;--purple:#6d5dfc;--green:#2bc5a4;--yellow:#ffcc52;--pink:#ff6fae;--blue:#55b8ff;--card:#fff;--bg:#f6f9ff;--shadow:0 12px 30px #49608018}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(180deg,#eef8ff,#fff8ef);min-height:100vh;overflow-x:hidden}.mathbg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.sym{position:absolute;font-weight:1000;opacity:.12;animation:float 10s ease-in-out infinite alternate}.sym:nth-child(4n+1){color:#ff5d73}.sym:nth-child(4n+2){color:#6d5dfc}.sym:nth-child(4n+3){color:#24b89a}.sym:nth-child(4n){color:#ffa928}@keyframes float{to{transform:translate(20px,-28px) rotate(12deg)}}header{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,#6d5dfc,#8d7eff);color:white;box-shadow:0 7px 22px #463f8f33}.bar{max-width:1120px;margin:auto;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font-weight:900;font-size:22px}.wallet{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#ffffff20;border:1px solid #ffffff33;border-radius:999px;padding:8px 11px;font-weight:800;font-size:13px}.sound{border:0;background:#fff;color:#5b50d9;border-radius:999px;padding:8px 11px;font-weight:900;cursor:pointer}.nav{max-width:1120px;margin:12px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.nav button{border:0;background:#ffffffb9;color:#606b80;border-radius:14px;padding:11px 8px;font-weight:900;cursor:pointer}.nav button.active{background:#fff;color:#5c51d9;box-shadow:var(--shadow)}main{max-width:1120px;margin:auto;padding:18px 16px 50px}.page{display:none}.page.active{display:block}.card{background:var(--card);border:1px solid #edf0f7;border-radius:24px;box-shadow:var(--shadow);padding:20px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;align-items:stretch}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.03;margin:0 0 10px}.hero p{color:var(--muted);font-size:17px;line-height:1.55}.cta{border:0;border-radius:15px;padding:12px 17px;font-size:16px;font-weight:900;cursor:pointer}.primary{background:var(--purple);color:white}.secondary{background:#eef0ff;color:#5b50d9}.mascotBox{min-height:255px;background:radial-gradient(circle at 30% 20%,#fff6b5,#ffe2dc 55%,#ded8ff);display:grid;place-items:center;position:relative;overflow:hidden}.mascot{font-size:105px;animation:bob 2s ease-in-out infinite;filter:drop-shadow(0 14px 12px #0002)}@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}.sectionTitle{font-size:27px;margin:27px 0 13px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.mini{cursor:pointer;transition:.2s}.mini:hover{transform:translateY(-4px)}.mini .ico{font-size:38px}.mini h3{margin:7px 0}.mini p{font-size:14px;color:var(--muted);margin:0}.profile{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:15px}.avatarBig{font-size:62px;width:84px;height:84px;display:grid;place-items:center;border-radius:24px;background:#f0edff}.profile h2{margin:0}.profile small{color:var(--muted)}.charGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.char{border:2px solid transparent;border-radius:20px;background:#fafbff;padding:14px;text-align:center;cursor:pointer}.char.active{border-color:var(--purple);background:#f1efff}.char .face{font-size:54px}.char b{display:block;margin-top:6px}.rewardBanner{display:flex;align-items:center;justify-content:space-between;gap:15px;background:linear-gradient(135deg,#fff9d8,#fff0bd)}.rewardBanner .gift{font-size:52px}.worldTop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.world{display:grid;grid-template-columns:repeat(10,1fr);gap:9px;margin-top:15px}.node{aspect-ratio:1;border:0;border-radius:18px;font-weight:1000;cursor:not-allowed;background:#edf0f5;color:#9aa3b3;box-shadow:inset 0 -4px #dbe0e8}.node.open{cursor:pointer;background:linear-gradient(#fff,#f5f2ff);color:#5c51d9;box-shadow:0 7px 14px #6d5dfc18,inset 0 -4px #d8d3ff}.node.done{background:linear-gradient(#e4fff5,#c8f4e6);color:#157b62}.node.current{background:linear-gradient(#fff6aa,#ffd95d);color:#765d00;animation:pulse 1.4s infinite}.node.boss.open,.node.boss.done{background:linear-gradient(#ffe5ea,#ffc6d3);color:#b93e62}.node .tiny{display:block;font-size:10px}@keyframes pulse{50%{transform:scale(1.07)}}.gameWrap{max-width:720px;margin:auto}.question{font-size:40px;text-align:center;font-weight:1000;margin:25px 0}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ans{border:2px solid transparent;background:#f6f8fc;border-radius:18px;padding:17px;font-size:22px;font-weight:1000;cursor:pointer}.ans:hover{border-color:#cbc6ff}.stats{display:flex;gap:9px;flex-wrap:wrap}.stat{background:#f3f6fb;border-radius:14px;padding:9px 12px;font-weight:900}.feedback{text-align:center;font-weight:900;min-height:30px;margin-top:12px}.progress{height:12px;background:#edf1f6;border-radius:20px;overflow:hidden;margin:14px 0}.prog{height:100%;background:linear-gradient(90deg,var(--green),var(--purple));width:0}.rewardGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.reward{min-height:140px}.reward .rIco{font-size:40px}.locked{filter:grayscale(1);opacity:.6}.shopRow{display:flex;gap:10px;flex-wrap:wrap}.shopItem{flex:1;min-width:180px}.confetti{position:fixed;width:10px;height:14px;border-radius:3px;z-index:99;pointer-events:none;animation:fall .9s ease-out forwards}@keyframes fall{to{transform:translate(var(--x),var(--y)) rotate(540deg);opacity:0}}.modal{position:fixed;inset:0;background:#24304a88;display:none;place-items:center;z-index:80;padding:18px}.modal.show{display:grid}.modal .card{max-width:470px;width:100%;text-align:center}.nameInput{width:100%;padding:13px;border-radius:14px;border:2px solid #e5e8f0;font-size:16px}footer{text-align:center;color:var(--muted);padding:24px}@media(max-width:820px){.hero{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.world{grid-template-columns:repeat(5,1fr)}.charGrid{grid-template-columns:repeat(3,1fr)}.rewardGrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.brand{font-size:18px}.wallet{gap:5px}.pill,.sound{font-size:11px;padding:7px 8px}.nav{gap:5px}.nav button{font-size:11px}.profile{grid-template-columns:auto 1fr}.profile .cta{grid-column:1/-1}.grid4,.rewardGrid{grid-template-columns:1fr}.charGrid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr}.question{font-size:34px}}
+
+.languageBox{display:flex;align-items:center;gap:7px}.languageBox select{border:0;border-radius:999px;padding:8px 10px;font-weight:900;color:#5b50d9;background:white;max-width:145px}.missionGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mission{position:relative;overflow:hidden}.mission .missionIcon{font-size:34px}.missionBar{height:9px;background:#edf1f6;border-radius:20px;overflow:hidden;margin-top:10px}.missionFill{height:100%;background:linear-gradient(90deg,#ffb64d,#6d5dfc)}.chestCard{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:linear-gradient(135deg,#fff7c7,#ffe5f4)}.chestIco{font-size:62px;animation:chestBounce 1.8s ease-in-out infinite}@keyframes chestBounce{50%{transform:translateY(-7px) rotate(3deg)}}.worldCards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.worldCard{border:0;border-radius:20px;padding:15px;text-align:left;min-height:125px;cursor:pointer;box-shadow:var(--shadow);font:inherit}.worldCard b{display:block;font-size:16px}.worldCard small{opacity:.78}.worldCard .wi{font-size:34px}.wc0{background:linear-gradient(145deg,#fff0f6,#ffe0aa)}.wc1{background:linear-gradient(145deg,#ddf8ff,#cbe7ff)}.wc2{background:linear-gradient(145deg,#e5e2ff,#d7edff)}.wc3{background:linear-gradient(145deg,#e5f7cf,#fff0be)}.wc4{background:linear-gradient(145deg,#dce8ff,#e7e4ff)}.worldSection{border-radius:25px;padding:18px;margin-top:15px;position:relative;overflow:hidden}.worldSection h2{margin:0 0 4px}.worldSection p{margin:0 0 12px;color:#606b80}.themeCandy{background:linear-gradient(135deg,#fff4f8,#fff1c7)}.themeOcean{background:linear-gradient(135deg,#e5fbff,#e6f0ff)}.themeSpace{background:linear-gradient(135deg,#eeeaff,#e1efff)}.themeDino{background:linear-gradient(135deg,#edfbdc,#fff4d5)}.themeFuture{background:linear-gradient(135deg,#e8f5ff,#efe9ff)}.world{grid-template-columns:repeat(10,1fr);margin-top:8px}.node{min-width:0}.dailyBadge{display:inline-block;padding:5px 9px;border-radius:999px;background:#fff3bc;font-weight:900;font-size:12px}.certificateGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}.certificate{position:relative;text-align:center;min-height:175px;background:linear-gradient(145deg,#fff,#f7f5ff);border:2px solid #eeeaff}.certificate .seal{font-size:40px}.certificate.unlocked{border-color:#e6c95a;background:linear-gradient(145deg,#fffdf2,#fff7cb)}.certificate button{margin-top:8px}.certificatePaper{border:10px double #725ecb!important;background:linear-gradient(145deg,#fffdf4,#fff)!important;padding:34px!important;max-width:760px!important}.certTitle{font-family:Georgia,serif;font-size:38px;color:#5a48b5;margin:6px 0}.certName{font-size:30px;font-weight:1000;border-bottom:2px solid #c9c1ef;display:inline-block;padding:5px 30px}.certWorld{font-size:23px;font-weight:900;color:#176f67}.certMeta{color:#747d91}.worldRibbon{position:absolute;right:-28px;top:18px;transform:rotate(35deg);background:#fff8;color:#556;padding:5px 35px;font-size:11px;font-weight:1000}.tinyNotice{font-size:12px;color:var(--muted)}body[dir="rtl"] .worldCard{text-align:right}body[dir="rtl"] .profile,body[dir="rtl"] .chestCard{direction:rtl}@media(max-width:900px){.worldCards,.certificateGrid{grid-template-columns:repeat(3,1fr)}.missionGrid{grid-template-columns:1fr}}@media(max-width:620px){.languageBox select{max-width:105px;font-size:11px}.worldCards,.certificateGrid{grid-template-columns:1fr 1fr}.chestCard{grid-template-columns:auto 1fr}.chestCard button{grid-column:1/-1}.world{grid-template-columns:repeat(5,1fr)}}
+@media print{body>*{display:none!important}#certificateModal{display:block!important;position:static!important;background:white!important}#certificateModal .card{box-shadow:none!important;margin:30px auto!important}.certActions{display:none!important}}
+.curriculumPanel{background:linear-gradient(135deg,#f3f0ff,#eefcff);display:grid;gap:16px}.curriculumPanel h2{margin:0}.curriculumPanel p{margin:5px 0 0;color:var(--muted)}.ageButtons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ageBtn{border:2px solid transparent;background:white;border-radius:18px;padding:14px;cursor:pointer;color:var(--ink);font:inherit}.ageBtn b,.ageBtn small{display:block}.ageBtn b{font-size:22px}.ageBtn small{color:var(--muted)}.ageBtn.active{border-color:var(--purple);background:#f5f2ff}.curriculumNow,.lessonObjective{display:flex;align-items:center;gap:11px;background:#fff;border-radius:16px;padding:12px 14px}.curriculumNow>span,.lessonObjective>span{font-size:28px}.curriculumNow small,.lessonObjective small{display:block;color:var(--muted)}.curriculumNow b,.lessonObjective b{display:block}.lessonObjective{margin:14px 0;background:linear-gradient(135deg,#fff8d9,#f1efff)}.worldObjective{font-size:12px;background:#ffffff99;border-radius:10px;padding:6px 8px!important;margin:5px 0 10px!important;color:#566!important}@media(max-width:620px){.ageButtons{grid-template-columns:1fr}}
+/* ===== Premium Visual Upgrade ===== */
+:root{
+  --bg:#f7f8ff; --ink:#182238; --muted:#667085;
+  --purple:#6C5CE7; --purple2:#8B7CF6; --blue:#3B82F6;
+  --cyan:#22D3EE; --pink:#FF6B9E; --yellow:#FFC857;
+  --green:#22C55E; --orange:#FF8A3D; --card:#ffffff;
+  --line:#E8EAF3; --shadow:0 14px 38px rgba(55,65,81,.12);
+  --shadow-soft:0 8px 24px rgba(79,70,229,.10);
+}
+body{
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,107,158,.12), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(34,211,238,.12), transparent 25%),
+    radial-gradient(circle at 80% 85%, rgba(108,92,231,.10), transparent 30%),
+    linear-gradient(180deg,#fbfbff 0%,#f4f7ff 100%);
+  color:var(--ink);
+}
+.topbar{
+  background:rgba(255,255,255,.90)!important;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(108,92,231,.10);
+  box-shadow:0 8px 30px rgba(31,41,55,.06);
+}
+.logo,.brand{font-weight:900!important;letter-spacing:-.5px}
+.card{
+  background:linear-gradient(180deg,#fff 0%,#fcfcff 100%)!important;
+  border:1px solid rgba(108,92,231,.08)!important;
+  box-shadow:var(--shadow-soft)!important;
+  border-radius:24px!important;
+}
+.hero{
+  background:
+    radial-gradient(circle at 90% 20%,rgba(255,255,255,.35),transparent 24%),
+    linear-gradient(135deg,#6C5CE7 0%,#7C6CF3 36%,#4D9CFF 100%)!important;
+  color:#fff!important;
+  box-shadow:0 20px 50px rgba(76,81,191,.22)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+}
+.hero h1,.hero p{color:#fff!important}
+.hero .btn,.primary{
+  background:linear-gradient(135deg,#FFCC4D,#FF9F43)!important;
+  color:#2F2500!important;border:none!important;
+  box-shadow:0 10px 22px rgba(255,159,67,.30)!important;
+  font-weight:900!important;
+}
+.btn,button{transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+.btn:hover,button:hover{transform:translateY(-2px);filter:saturate(1.05)}
+.btn:active,button:active{transform:translateY(0) scale(.98)}
+.sectionTitle{font-weight:900!important;letter-spacing:-.35px}
+.navBtn{border-radius:14px!important;font-weight:800!important}
+.navBtn.active{
+  background:linear-gradient(135deg,#6C5CE7,#4D9CFF)!important;
+  color:#fff!important;box-shadow:0 8px 18px rgba(108,92,231,.22)!important;
+}
+.stat,.miniStat,.currencyBox{
+  background:linear-gradient(180deg,#fff,#f8f9ff)!important;
+  border:1px solid #eceefe!important;border-radius:18px!important;
+  box-shadow:0 6px 16px rgba(31,41,55,.06)!important;
+}
+.buddy,.buddyCard{
+  border-radius:22px!important;border:2px solid transparent!important;
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(135deg,#FFD166,#FF6B9E,#6C5CE7,#22D3EE) border-box!important;
+  box-shadow:0 10px 22px rgba(31,41,55,.08)!important;
+}
+.buddy.selected,.buddyCard.selected,.buddy.active{
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 14px 30px rgba(108,92,231,.18)!important;
+}
+.ageBtn{
+  background:linear-gradient(180deg,#fff,#fafbff)!important;
+  border:1px solid #e8eaf7!important;box-shadow:0 7px 18px rgba(31,41,55,.06)!important;
+}
+.ageBtn.active{
+  background:linear-gradient(135deg,#F1EEFF,#EAF7FF)!important;
+  border-color:#7C6CF3!important;box-shadow:0 10px 24px rgba(108,92,231,.15)!important;
+}
+.curriculumPanel{
+  background:linear-gradient(135deg,rgba(255,255,255,.97),rgba(247,249,255,.97))!important;
+  border:1px solid rgba(108,92,231,.10)!important;
+}
+.curriculumNow,.lessonObjective{
+  border:1px solid #eceefe!important;
+  box-shadow:0 7px 18px rgba(31,41,55,.05)!important;
+}
+.quickCard,.gameCard,.rewardCard,.shopItem{
+  border-radius:22px!important;box-shadow:0 10px 24px rgba(31,41,55,.08)!important;
+  border:1px solid rgba(108,92,231,.08)!important;
+}
+.progress{height:14px!important;border-radius:999px!important;background:#EDEFF7!important;overflow:hidden}
+.prog{
+  background:linear-gradient(90deg,#22C55E,#22D3EE,#6C5CE7)!important;
+  border-radius:999px!important;box-shadow:0 0 18px rgba(34,211,238,.35);
+}
+.answerBtn,.optionBtn{
+  background:#fff!important;border:2px solid #e8eaf2!important;border-radius:18px!important;
+  font-weight:900!important;box-shadow:0 7px 16px rgba(31,41,55,.05)!important;
+}
+.answerBtn:hover,.optionBtn:hover{
+  border-color:#6C5CE7!important;box-shadow:0 10px 20px rgba(108,92,231,.12)!important;
+}
+.worldSection{
+  border-radius:28px!important;border:1px solid rgba(255,255,255,.30)!important;
+  box-shadow:0 18px 40px rgba(31,41,55,.10)!important;overflow:hidden;
+}
+.worldSection:nth-of-type(1){background:linear-gradient(135deg,#FFF0F6,#FFDDEE)!important}
+.worldSection:nth-of-type(2){background:linear-gradient(135deg,#EAFBFF,#DDF5FF)!important}
+.worldSection:nth-of-type(3){background:linear-gradient(135deg,#F1EEFF,#E8E5FF)!important}
+.worldSection:nth-of-type(4){background:linear-gradient(135deg,#FFF5E7,#FFE3B8)!important}
+.worldSection:nth-of-type(5){background:linear-gradient(135deg,#EAF2FF,#DCE6FF)!important}
+.levelNode,.level,.mapLevel{
+  box-shadow:0 8px 18px rgba(31,41,55,.10)!important;border:2px solid rgba(255,255,255,.8)!important;
+}
+.levelNode.unlocked,.level.unlocked,.mapLevel.unlocked{
+  background:linear-gradient(135deg,#6C5CE7,#4D9CFF)!important;color:#fff!important;
+}
+.levelNode.current,.level.current,.mapLevel.current{
+  background:linear-gradient(135deg,#FFCC4D,#FF9F43)!important;color:#2E2400!important;
+  box-shadow:0 0 0 6px rgba(255,200,87,.18),0 12px 26px rgba(255,159,67,.24)!important;
+}
+.levelNode.boss,.level.boss,.mapLevel.boss{
+  background:linear-gradient(135deg,#FF6B9E,#FF8A3D)!important;color:#fff!important;
+}
+.worldObjective,.topicChip{
+  background:rgba(255,255,255,.80)!important;border:1px solid rgba(255,255,255,.9)!important;
+  box-shadow:0 4px 12px rgba(31,41,55,.05);
+}
+.missionCard,.mission,.dailyCard{
+  border-radius:20px!important;background:linear-gradient(180deg,#fff,#fbfbff)!important;
+  border:1px solid #eceefe!important;box-shadow:0 8px 20px rgba(31,41,55,.06)!important;
+}
+.chest,.treasureChest{filter:drop-shadow(0 12px 16px rgba(255,159,67,.22))}
+.certificate,.certCard{
+  background:radial-gradient(circle at 15% 15%,rgba(255,204,77,.18),transparent 22%),
+             linear-gradient(135deg,#fffdf6,#ffffff)!important;
+  border:1px solid #f1df9e!important;box-shadow:0 12px 30px rgba(164,119,0,.10)!important;
+}
+.modal,.dialog,.popup{border-radius:26px!important;box-shadow:0 24px 70px rgba(17,24,39,.22)!important}
+select,input{
+  border-radius:14px!important;border:1px solid #dfe3f0!important;background:#fff!important;
+  box-shadow:0 4px 12px rgba(31,41,55,.04);
+}
+select:focus,input:focus{
+  outline:none!important;border-color:#6C5CE7!important;box-shadow:0 0 0 4px rgba(108,92,231,.10)!important;
+}
+@media (max-width:700px){
+  .card{border-radius:20px!important}
+  .hero{border-radius:24px!important}
+  .worldSection{border-radius:22px!important}
+}
+
+
+/* ===== Vivid Premium Theme v2 ===== */
+:root{
+  --ink:#111A33!important;
+  --muted:#5E6A82!important;
+  --purple:#5B2EFF!important;
+  --purple2:#7A45FF!important;
+  --blue:#0877FF!important;
+  --cyan:#00C9FF!important;
+  --pink:#FF4F9A!important;
+  --yellow:#FFC928!important;
+  --green:#1ACB5B!important;
+  --orange:#FF8A22!important;
+}
+html{background:#101052!important}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 12% 13%,rgba(255,76,154,.28) 0 2px,transparent 3px),
+    radial-gradient(circle at 86% 20%,rgba(255,202,40,.27) 0 3px,transparent 4px),
+    radial-gradient(circle at 21% 75%,rgba(45,205,255,.22) 0 3px,transparent 4px),
+    linear-gradient(180deg,#3A16C8 0%,#2513A8 22%,#0737A5 62%,#0083D8 100%)!important;
+  background-attachment:fixed!important;
+  color:var(--ink)!important;
+}
+body:before{
+  content:"＋  ×   ÷  −   ✦    +   ×    ÷     −   ✧";
+  position:fixed;
+  inset:170px 0 auto 0;
+  height:calc(100vh - 170px);
+  overflow:hidden;
+  pointer-events:none;
+  color:rgba(255,255,255,.10);
+  font-size:54px;
+  line-height:2.8;
+  letter-spacing:38px;
+  transform:rotate(-8deg);
+  z-index:0;
+}
+body>*{position:relative;z-index:1}
+.topbar{
+  background:linear-gradient(135deg,#5228EF 0%,#6D43FF 48%,#744DFF 100%)!important;
+  border-bottom:1px solid rgba(255,255,255,.15)!important;
+  box-shadow:0 10px 30px rgba(16,8,84,.30)!important;
+}
+.topbar,.topbar *{color:#fff}
+.topbar select{
+  color:#3C35A5!important;
+  background:#fff!important;
+  font-weight:900!important;
+}
+.topbar select option{color:#1C2340!important}
+.logo,.brand{color:#fff!important;text-shadow:0 2px 0 rgba(0,0,0,.08)}
+.currencyBox,.stat{
+  background:rgba(255,255,255,.13)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  color:#fff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 7px 16px rgba(34,13,120,.16)!important;
+}
+main,.container,.page,.content{background:transparent!important}
+
+/* Main hero becomes deep, cinematic and colourful */
+.hero{
+  background:
+    radial-gradient(circle at 86% 24%,rgba(33,197,255,.35),transparent 24%),
+    radial-gradient(circle at 78% 75%,rgba(255,70,155,.24),transparent 31%),
+    linear-gradient(145deg,#111B78 0%,#1829A8 44%,#4516A9 100%)!important;
+  border:1px solid rgba(255,255,255,.17)!important;
+  box-shadow:0 20px 45px rgba(10,15,90,.33)!important;
+}
+.hero:after{
+  content:"✦   ✧    ★   ✦";
+  position:absolute;
+  right:22px;
+  top:22px;
+  color:#FFD43B;
+  opacity:.7;
+  letter-spacing:12px;
+  font-size:18px;
+}
+.hero .btn,.primary{
+  background:linear-gradient(135deg,#FFD93D 0%,#FF9F1C 100%)!important;
+  color:#231B00!important;
+  box-shadow:0 9px 0 rgba(184,89,0,.20),0 14px 28px rgba(255,143,24,.32)!important;
+}
+
+/* Section titles appear white over rich background */
+.sectionTitle,
+#home h2.sectionTitle,
+#map h2.sectionTitle,
+#game h2.sectionTitle,
+#rewards h2.sectionTitle{
+  color:#fff!important;
+  text-shadow:0 3px 10px rgba(14,20,90,.28);
+}
+
+/* Premium white cards with much stronger contrast */
+.card,.quickCard,.gameCard,.rewardCard,.shopItem,.missionCard,.mission,.dailyCard,
+.curriculumPanel,.certificate,.certCard{
+  background:linear-gradient(180deg,#FFFFFF 0%,#F7F9FF 100%)!important;
+  border:1px solid rgba(255,255,255,.88)!important;
+  box-shadow:0 16px 36px rgba(9,23,96,.22)!important;
+}
+.card h1,.card h2,.card h3,
+.quickCard h2,.quickCard h3,.gameCard h2,.rewardCard h2{color:#111A33!important}
+
+/* Learning path gets tinted, high-contrast age rows */
+.curriculumPanel{
+  background:linear-gradient(160deg,#FBFAFF 0%,#EDF4FF 100%)!important;
+}
+.ageBtn{
+  background:#fff!important;
+  box-shadow:0 9px 20px rgba(34,40,91,.09)!important;
+}
+.ageBtn[data-age="4-6"]{
+  background:linear-gradient(135deg,#FFF0FA 0%,#F0E9FF 100%)!important;
+  border:2px solid #A96CFF!important;
+}
+.ageBtn[data-age="7-9"]{
+  background:linear-gradient(135deg,#F1FFF0 0%,#E6FAE9 100%)!important;
+  border:2px solid #64C86A!important;
+}
+.ageBtn[data-age="10-12"]{
+  background:linear-gradient(135deg,#EAF8FF 0%,#E7F0FF 100%)!important;
+  border:2px solid #3B9CFF!important;
+}
+.ageBtn.active{
+  transform:translateY(-3px) scale(1.01)!important;
+  box-shadow:0 13px 26px rgba(73,52,190,.18)!important;
+}
+.curriculumNow,.lessonObjective{
+  background:#fff!important;
+  border:1px solid #E1E6F3!important;
+}
+
+/* Quick play cards: vivid left accent and tinted surfaces */
+.quickCard{
+  position:relative;
+  overflow:hidden;
+}
+.quickCard:before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;width:7px;
+  border-radius:20px 0 0 20px;
+}
+.quickCard:nth-child(4n+1){
+  background:linear-gradient(135deg,#FFF7FA,#FFE7F2)!important;
+}
+.quickCard:nth-child(4n+1):before{background:linear-gradient(#FF4F9A,#FF7A51)}
+.quickCard:nth-child(4n+2){
+  background:linear-gradient(135deg,#FFF9E8,#FFF0B8)!important;
+}
+.quickCard:nth-child(4n+2):before{background:linear-gradient(#FFC928,#FF8A22)}
+.quickCard:nth-child(4n+3){
+  background:linear-gradient(135deg,#F1F1F7,#E6E8F1)!important;
+}
+.quickCard:nth-child(4n+3):before{background:linear-gradient(#697386,#343B4F)}
+.quickCard:nth-child(4n+4){
+  background:linear-gradient(135deg,#FFF7E7,#FFE8B5)!important;
+}
+.quickCard:nth-child(4n+4):before{background:linear-gradient(#FFBE0B,#FB8500)}
+
+/* Missions each have their own colourful glassy tint */
+.missionCard:nth-child(3n+1),.mission:nth-child(3n+1){
+  background:linear-gradient(135deg,#FFF1F8 0%,#FFDCEA 100%)!important;
+}
+.missionCard:nth-child(3n+2),.mission:nth-child(3n+2){
+  background:linear-gradient(135deg,#EEF7FF 0%,#D8E8FF 100%)!important;
+}
+.missionCard:nth-child(3n+3),.mission:nth-child(3n+3){
+  background:linear-gradient(135deg,#F2FFE9 0%,#DDF6D0 100%)!important;
+}
+.progress{
+  background:#DFE5F3!important;
+  box-shadow:inset 0 2px 4px rgba(23,36,80,.08)!important;
+}
+.prog{
+  background:linear-gradient(90deg,#FFB62E 0%,#FF6B8F 42%,#6E4BFF 100%)!important;
+  box-shadow:0 0 18px rgba(111,73,255,.38)!important;
+}
+
+/* World map: five very distinct premium worlds */
+.worldSection{
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 18px 38px rgba(8,19,90,.30)!important;
+}
+.worldSection h2,.worldSection h3,.worldSection p{color:inherit!important}
+.worldSection:nth-of-type(1){
+  background:
+    radial-gradient(circle at 88% 20%,rgba(255,255,255,.34),transparent 20%),
+    linear-gradient(135deg,#FF61B6 0%,#D241FF 100%)!important;
+}
+.worldSection:nth-of-type(2){
+  background:
+    radial-gradient(circle at 88% 20%,rgba(255,255,255,.26),transparent 22%),
+    linear-gradient(135deg,#00BFF3 0%,#006DDC 100%)!important;
+}
+.worldSection:nth-of-type(3){
+  background:
+    radial-gradient(circle at 80% 25%,rgba(126,100,255,.38),transparent 22%),
+    linear-gradient(135deg,#25136F 0%,#4B19C8 55%,#102B8B 100%)!important;
+}
+.worldSection:nth-of-type(4){
+  background:
+    radial-gradient(circle at 84% 22%,rgba(255,231,100,.36),transparent 23%),
+    linear-gradient(135deg,#F4B93B 0%,#54C85A 100%)!important;
+  color:#17351A!important;
+}
+.worldSection:nth-of-type(5){
+  background:
+    radial-gradient(circle at 82% 22%,rgba(255,255,255,.28),transparent 23%),
+    linear-gradient(135deg,#14B9F1 0%,#5575F7 52%,#7C45FF 100%)!important;
+}
+.worldObjective{
+  background:rgba(255,255,255,.88)!important;
+  color:#17203B!important;
+}
+
+/* Level nodes are brighter and more game-like */
+.levelNode,.level,.mapLevel{
+  background:rgba(255,255,255,.90)!important;
+  color:#17203B!important;
+  border:2px solid rgba(255,255,255,.94)!important;
+  box-shadow:0 8px 18px rgba(10,24,92,.20)!important;
+}
+.levelNode.unlocked,.level.unlocked,.mapLevel.unlocked{
+  background:linear-gradient(135deg,#6C43FF,#198CFF)!important;color:#fff!important;
+}
+.levelNode.current,.level.current,.mapLevel.current{
+  background:linear-gradient(135deg,#FFDF3F,#FF9821)!important;color:#261A00!important;
+}
+.levelNode.boss,.level.boss,.mapLevel.boss{
+  background:linear-gradient(135deg,#FF3D80,#FF6C2F)!important;color:#fff!important;
+}
+
+/* Game area turns into blue night adventure */
+#game{
+  background:
+    radial-gradient(circle at 50% 20%,rgba(51,134,255,.20),transparent 30%),
+    linear-gradient(180deg,rgba(8,24,113,.88),rgba(0,87,176,.78))!important;
+  border-radius:28px;
+  padding-top:18px;
+  padding-bottom:24px;
+}
+#game .sectionTitle{color:#fff!important}
+.gameCard{
+  background:linear-gradient(180deg,#FFFFFF,#EEF4FF)!important;
+}
+.question{
+  background:#fff!important;
+  border-radius:24px!important;
+  color:#10204B!important;
+  box-shadow:0 12px 30px rgba(0,18,92,.20)!important;
+}
+.answerBtn,.optionBtn{
+  color:#fff!important;
+  border:none!important;
+  box-shadow:0 10px 18px rgba(6,24,91,.20)!important;
+}
+.answerBtn:nth-child(4n+1),.optionBtn:nth-child(4n+1){background:linear-gradient(135deg,#FF4938,#FF6B38)!important}
+.answerBtn:nth-child(4n+2),.optionBtn:nth-child(4n+2){background:linear-gradient(135deg,#0B8CFF,#1CB8FF)!important}
+.answerBtn:nth-child(4n+3),.optionBtn:nth-child(4n+3){background:linear-gradient(135deg,#16C947,#05A93E)!important}
+.answerBtn:nth-child(4n+4),.optionBtn:nth-child(4n+4){background:linear-gradient(135deg,#FFC21A,#FF9318)!important}
+.answerBtn:hover,.optionBtn:hover{filter:brightness(1.08)!important;transform:translateY(-3px)}
+
+/* Rewards gets a richer premium feel */
+#rewards{
+  background:linear-gradient(180deg,rgba(47,20,177,.48),rgba(8,99,184,.18))!important;
+  border-radius:28px;
+  padding-top:18px;
+  padding-bottom:24px;
+}
+.rewardCard:nth-child(3n+1){background:linear-gradient(135deg,#FFF7DC,#FFE99D)!important}
+.rewardCard:nth-child(3n+2){background:linear-gradient(135deg,#F3EAFF,#E4D4FF)!important}
+.rewardCard:nth-child(3n+3){background:linear-gradient(135deg,#E7FAFF,#CDEFFF)!important}
+
+/* Footer / bottom navigation if present */
+.bottomNav,.bottom-nav,.mobileNav{
+  background:rgba(10,27,92,.96)!important;
+  border-top:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:0 -8px 25px rgba(7,19,75,.25)!important;
+}
+.bottomNav *,.bottom-nav *,.mobileNav *{color:#DCE7FF!important}
+.bottomNav .active,.bottom-nav .active,.mobileNav .active{color:#FFD52A!important}
+
+/* Make select/music controls crisp */
+select,input,.musicBtn,#musicBtn{
+  background:#fff!important;
+  color:#373A93!important;
+  border:1px solid rgba(255,255,255,.90)!important;
+  font-weight:800!important;
+}
+@media(max-width:700px){
+  body:before{font-size:38px;letter-spacing:24px}
+  .worldSection{border-radius:22px!important}
+  #game,#rewards{border-radius:22px}
+}
+
+
+/* ===== Language Flags Upgrade ===== */
+select#languageSelect, select[id*="lang"], .languageSelect, .langSelect {
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif!important;
+  font-weight: 900!important;
+  letter-spacing: .1px;
+  padding-left: 14px!important;
+}
+select option{
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif!important;
+  background:#fff!important;
+  color:#17203B!important;
+  padding:10px!important;
+}
+
+
+/* ===== Audio Control Polish ===== */
+#musicBtn,.musicBtn,[onclick*="music"],[onclick*="Music"]{
+  box-shadow:0 8px 18px rgba(9,23,96,.18)!important;
+}
+#musicBtn:active,.musicBtn:active,[onclick*="music"]:active,[onclick*="Music"]:active{
+  transform:scale(.96)!important;
+}
+
+
+/* ===== Cheerful Premium Home Upgrade ===== */
+#home{
+  position:relative; overflow:hidden; border-radius:30px;
+  padding:18px 14px 28px!important;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,232,77,.35) 0 4px,transparent 5px),
+    radial-gradient(circle at 88% 15%,rgba(255,255,255,.28) 0 5px,transparent 6px),
+    radial-gradient(circle at 82% 48%,rgba(255,82,168,.22),transparent 20%),
+    linear-gradient(160deg,#3515C4 0%,#5D2EF0 30%,#1679E8 68%,#16BCE7 100%)!important;
+}
+#home:before{
+  content:"✦  ★  ✧   +  ×  ÷  −  ✦";
+  position:absolute; inset:14px 10px auto 10px; color:rgba(255,255,255,.18);
+  font-size:26px; letter-spacing:20px; transform:rotate(-5deg); pointer-events:none;
+}
+#home .hero{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 84% 24%,rgba(47,209,255,.42),transparent 23%),
+    radial-gradient(circle at 76% 76%,rgba(255,80,168,.30),transparent 28%),
+    radial-gradient(circle at 12% 88%,rgba(255,214,67,.24),transparent 24%),
+    linear-gradient(145deg,#24106F 0%,#4019B9 48%,#1175DB 100%)!important;
+  color:#fff!important; border:2px solid rgba(255,255,255,.20)!important;
+  box-shadow:0 22px 46px rgba(13,13,95,.36)!important;
+}
+#home .hero:before{
+  content:"✨  ✦  ⭐  ✧"; position:absolute; right:18px; top:18px;
+  color:#FFE66B; font-size:20px; letter-spacing:8px;
+}
+#home .hero h1,#home .hero h2,#home .hero p{color:#fff!important}
+#home .hero .badge,#home .hero [class*="badge"]{
+  background:linear-gradient(135deg,#FFF7B3,#FFD63E)!important;
+  color:#493800!important; box-shadow:0 8px 18px rgba(255,194,39,.25)!important;
+}
+#home .hero .primary,#home .hero .btn:first-of-type{
+  background:linear-gradient(135deg,#FFDF3E,#FF9D20)!important;
+  color:#251900!important; border:2px solid rgba(255,255,255,.30)!important;
+  box-shadow:0 10px 0 rgba(174,84,0,.16),0 16px 28px rgba(255,145,29,.30)!important;
+}
+#home .hero .btn:not(.primary){
+  background:linear-gradient(135deg,#fff,#E9F2FF)!important;
+  color:#5A36C8!important;
+}
+#home .sectionTitle{color:#fff!important;text-shadow:0 3px 10px rgba(16,25,105,.30)!important}
+#home .card{
+  border:2px solid rgba(255,255,255,.78)!important;
+  box-shadow:0 18px 38px rgba(10,30,109,.24)!important;
+}
+#home .card:nth-of-type(2){background:linear-gradient(145deg,#FFFDF5,#FFF2C7)!important}
+#home .card:nth-of-type(3){background:linear-gradient(145deg,#FBFAFF,#EEE8FF)!important}
+#home .card:nth-of-type(4){background:linear-gradient(145deg,#F2FCFF,#DDF6FF)!important}
+#home > .card:last-of-type{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,231,92,.30),transparent 22%),
+    radial-gradient(circle at 15% 80%,rgba(48,201,102,.22),transparent 25%),
+    linear-gradient(145deg,#E8FAFF 0%,#CFF4FF 48%,#DFFFD3 100%)!important;
+}
+#home .buddy,#home .buddyCard{
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(135deg,#FFD43D,#FF6FA6,#7A50FF,#21CCF5) border-box!important;
+  border:3px solid transparent!important;
+  box-shadow:0 12px 24px rgba(20,35,100,.13)!important;
+}
+#home .ageBtn[data-age="4-6"]{background:linear-gradient(135deg,#FFF0FA,#F0E9FF)!important}
+#home .ageBtn[data-age="7-9"]{background:linear-gradient(135deg,#F0FFF1,#E2F8E6)!important}
+#home .ageBtn[data-age="10-12"]{background:linear-gradient(135deg,#EAF8FF,#E5EEFF)!important}
+@media(max-width:700px){
+  #home{border-radius:0 0 28px 28px}
+  #home:before{font-size:20px;letter-spacing:13px}
+  #home .hero{border-radius:28px!important}
+}
+
+
+/* ===== Home Colorful Math Symbols ===== */
+#home .hero{
+  position:relative;
+}
+#home .hero .math-symbols{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:2;
+}
+#home .hero .math-symbols span{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  font-size:34px;
+  font-weight:1000;
+  line-height:1;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.45);
+  box-shadow:0 10px 22px rgba(16,22,100,.24), inset 0 1px 0 rgba(255,255,255,.25);
+  text-shadow:0 2px 6px rgba(0,0,0,.18);
+  animation:mathFloat 3.8s ease-in-out infinite;
+}
+#home .hero .math-symbols .plus{
+  left:7%; top:25%;
+  background:linear-gradient(135deg,#FF4F9A,#FF7A3D);
+  transform:rotate(-10deg);
+}
+#home .hero .math-symbols .minus{
+  right:8%; top:20%;
+  background:linear-gradient(135deg,#00C9FF,#168BFF);
+  animation-delay:.6s;
+  transform:rotate(8deg);
+}
+#home .hero .math-symbols .times{
+  left:18%; bottom:24%;
+  background:linear-gradient(135deg,#7A45FF,#C04DFF);
+  animation-delay:1.1s;
+  transform:rotate(9deg);
+}
+#home .hero .math-symbols .divide{
+  right:12%; bottom:28%;
+  background:linear-gradient(135deg,#FFD43D,#FF9B1F);
+  color:#3B2900;
+  animation-delay:1.7s;
+  transform:rotate(-8deg);
+}
+#home .hero .math-symbols .plus2{
+  right:33%; top:11%;
+  width:40px;height:40px;border-radius:14px;font-size:26px;
+  background:linear-gradient(135deg,#26D66B,#0DB4A0);
+  animation-delay:2.1s;
+}
+#home .hero .math-symbols .times2{
+  left:38%; top:17%;
+  width:38px;height:38px;border-radius:13px;font-size:24px;
+  background:linear-gradient(135deg,#FF6B6B,#FF3D82);
+  animation-delay:2.5s;
+}
+@keyframes mathFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -10px}
+}
+
+/* Keep content above decorative symbols */
+#home .hero > *:not(.math-symbols){
+  position:relative;
+  z-index:3;
+}
+
+@media(max-width:700px){
+  #home .hero .math-symbols span{
+    width:44px;height:44px;border-radius:15px;font-size:28px;
+    opacity:.92;
+  }
+  #home .hero .math-symbols .plus{left:4%;top:30%}
+  #home .hero .math-symbols .minus{right:5%;top:27%}
+  #home .hero .math-symbols .times{left:8%;bottom:28%}
+  #home .hero .math-symbols .divide{right:7%;bottom:31%}
+  #home .hero .math-symbols .plus2,
+  #home .hero .math-symbols .times2{display:none}
+}
+
+
+/* ===== HERO CONTRAST FIX ===== */
+#home .hero{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(0,207,255,.30), transparent 22%),
+    radial-gradient(circle at 76% 78%, rgba(255,63,160,.24), transparent 28%),
+    radial-gradient(circle at 18% 84%, rgba(255,211,60,.18), transparent 24%),
+    linear-gradient(145deg,#15135F 0%,#2B168F 42%,#143CA8 72%,#0C6CCB 100%)!important;
+  border:2px solid rgba(255,255,255,.20)!important;
+  box-shadow:0 20px 42px rgba(5,8,66,.38)!important;
+}
+
+/* Force all hero copy to high contrast */
+#home .hero h1,
+#home .hero h2,
+#home .hero h3,
+#home .hero p,
+#home .hero .heroTitle,
+#home .hero .heroText{
+  color:#FFFFFF!important;
+  opacity:1!important;
+  text-shadow:0 3px 12px rgba(0,0,0,.35)!important;
+}
+
+/* Badge stays bright but readable */
+#home .hero .badge,
+#home .hero [class*="badge"]{
+  background:linear-gradient(135deg,#FFF08A,#FFD23F)!important;
+  color:#3D3100!important;
+  border:1px solid rgba(255,255,255,.55)!important;
+  box-shadow:0 8px 18px rgba(255,196,37,.25)!important;
+  text-shadow:none!important;
+}
+
+/* Buttons stay readable */
+#home .hero .primary,
+#home .hero .btn:first-of-type{
+  background:linear-gradient(135deg,#FFD93D,#FF9E1D)!important;
+  color:#231A00!important;
+  text-shadow:none!important;
+  border:2px solid rgba(255,255,255,.30)!important;
+}
+#home .hero .btn:not(.primary){
+  background:linear-gradient(135deg,#FFFFFF,#EAF1FF)!important;
+  color:#5637C7!important;
+  text-shadow:none!important;
+}
+
+/* Rocket gets stronger visual separation */
+#home .hero img,
+#home .hero .rocket,
+#home .hero .mascot{
+  filter:drop-shadow(0 12px 16px rgba(0,0,0,.30))!important;
+}
+
+/* Math symbols remain colorful and more visible */
+#home .hero .math-symbols span{
+  opacity:1!important;
+  border:2px solid rgba(255,255,255,.55)!important;
+  box-shadow:0 10px 22px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.30)!important;
+}
+#home .hero .math-symbols .plus{
+  background:linear-gradient(135deg,#FF3F8E,#FF6B3D)!important;
+}
+#home .hero .math-symbols .minus{
+  background:linear-gradient(135deg,#05C7FF,#157BFF)!important;
+}
+#home .hero .math-symbols .times{
+  background:linear-gradient(135deg,#8B4DFF,#D44DFF)!important;
+}
+#home .hero .math-symbols .divide{
+  background:linear-gradient(135deg,#FFE23B,#FF9C1E)!important;
+  color:#352600!important;
+}
+#home .hero .math-symbols .plus2{
+  background:linear-gradient(135deg,#2ADB72,#0DB39E)!important;
+}
+#home .hero .math-symbols .times2{
+  background:linear-gradient(135deg,#FF5D5D,#FF3886)!important;
+}
+
+/* Prevent any old pale overlay from washing out the hero */
+#home .hero::after{
+  background:none!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Mobile readability */
+@media(max-width:700px){
+  #home .hero{
+    background:
+      radial-gradient(circle at 86% 16%, rgba(0,207,255,.26), transparent 22%),
+      radial-gradient(circle at 72% 76%, rgba(255,63,160,.22), transparent 28%),
+      linear-gradient(150deg,#16145F 0%,#281485 45%,#123FA4 74%,#0E72C9 100%)!important;
+  }
+  #home .hero h1{
+    font-size:clamp(38px,9vw,58px)!important;
+    line-height:1.04!important;
+  }
+  #home .hero p{
+    font-size:clamp(18px,4.7vw,25px)!important;
+    line-height:1.5!important;
+  }
+}
+
+
+/* ===== Home Hero Black Title ===== */
+#home .hero h1,
+#home .hero .heroTitle{
+  color:#101828!important;
+  text-shadow:none!important;
+  font-weight:900!important;
+}
+
+
+/* ===== Home Hero Description Blue ===== */
+#home .hero p,
+#home .hero .heroText{
+  color:#0B3D91!important;
+  text-shadow:none!important;
+  font-weight:700!important;
+}
+
+
+/* ===== Final Language Badge Correction ===== */
+#home .dailyBadge{
+  color:#5B2EFF!important;
+  text-shadow:none!important;
+  font-weight:900!important;
+}
+
+
+/* ===== Speed Round Countdown ===== */
+.speedTimerWrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:10px 0 14px;
+  padding:12px 16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#FFF7C9,#FFE59A);
+  color:#342400;
+  font-weight:900;
+  box-shadow:0 8px 18px rgba(255,165,0,.18);
+}
+.speedTimerWrap .speedTimerIcon{font-size:24px}
+#speedTimer{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:46px;
+  height:38px;
+  padding:0 10px;
+  border-radius:12px;
+  background:#fff;
+  color:#6C2EEA;
+  font-size:24px;
+  box-shadow:inset 0 0 0 2px rgba(108,46,234,.12);
+}
+.speedTimerWrap.danger{
+  background:linear-gradient(135deg,#FFE0E0,#FFB8B8);
+  animation:timerPulse .7s ease-in-out infinite;
+}
+.speedTimerWrap.danger #speedTimer{color:#D92D20}
+@keyframes timerPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025)}
+}
+
+
+/* ===== Game Stats Visibility Fix ===== */
+#game .stats{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+#game .stats .stat{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  min-height:64px!important;
+  padding:10px 8px!important;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F5F7FF 100%)!important;
+  border:1px solid #E3E7F2!important;
+  border-radius:18px!important;
+  color:#17213A!important;
+  font-weight:900!important;
+  font-size:16px!important;
+  line-height:1.15!important;
+  box-shadow:0 8px 18px rgba(25,38,92,.08)!important;
+  text-align:center!important;
+  opacity:1!important;
+}
+#game .stats .stat *,
+#game .stats .stat span{
+  color:#17213A!important;
+  opacity:1!important;
+  visibility:visible!important;
+  font-weight:900!important;
+}
+#game #gameLevel{
+  color:#5B2EFF!important;
+}
+#game #streak{
+  color:#E85D04!important;
+}
+#game #correctCount,
+#game #targetCount{
+  color:#138A48!important;
+}
+@media(max-width:520px){
+  #game .stats .stat{
+    font-size:14px!important;
+    padding:9px 5px!important;
+    min-height:60px!important;
+  }
+}
+
+
+/* ===== World Objective Text Contrast Fix ===== */
+.worldObjective,
+.worldObjective *,
+.worldSection .worldObjective,
+.worldSection .worldObjective *{
+  color:#111111!important;
+  opacity:1!important;
+  text-shadow:none!important;
+  font-weight:900!important;
+}
+.worldObjective{
+  background:rgba(255,255,255,.94)!important;
+  border:1px solid rgba(17,17,17,.10)!important;
+  box-shadow:0 6px 14px rgba(0,0,0,.08)!important;
+}
+
+
+/* ===== Daily Treasure Claim Fix ===== */
+#dailyClaimBtn:disabled{
+  filter:saturate(.55)!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+
+
+/* ===== Floating Math Symbols in Top Header ===== */
+header{position:sticky!important;overflow:hidden!important}
+.topMathFloaters{position:absolute;inset:0;pointer-events:none;z-index:0}
+header .bar{position:relative;z-index:2}
+.topMath{position:absolute;font-weight:1000;line-height:1;text-shadow:0 3px 8px rgba(0,0,0,.18);filter:drop-shadow(0 6px 10px rgba(0,0,0,.14));animation:topMathFloat 4.2s ease-in-out infinite}
+.topMath.plus{left:8%;top:18%;color:#32E06F;font-size:34px}
+.topMath.minus{left:28%;bottom:14%;color:#FFE34A;font-size:36px;animation-delay:.7s}
+.topMath.times{right:27%;top:16%;color:#FF4FC3;font-size:35px;animation-delay:1.4s}
+.topMath.divide{right:8%;bottom:16%;color:#2EC8FF;font-size:36px;animation-delay:2.1s}
+@keyframes topMathFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-10px) rotate(5deg)}}
+@media(max-width:700px){
+.topMath.plus{left:4%;top:12%;font-size:28px}
+.topMath.minus{left:34%;bottom:8%;font-size:30px}
+.topMath.times{right:30%;top:8%;font-size:29px}
+.topMath.divide{right:4%;bottom:9%;font-size:30px}
+}
+
+
+/* ===== Answer Background Colors Only ===== */
+#game .answers .ans{
+  color:#111827!important;
+  font-weight:900!important;
+  border:2px solid rgba(255,255,255,.92)!important;
+  box-shadow:0 10px 22px rgba(22,32,80,.10)!important;
+}
+
+</style></head><body><div class="mathbg" aria-hidden="true"><span class="sym" style="left:3%;top:10%;font-size:80px">+</span><span class="sym" style="left:17%;top:52%;font-size:64px">×</span><span class="sym" style="left:33%;top:19%;font-size:54px">−</span><span class="sym" style="left:52%;top:69%;font-size:78px">÷</span><span class="sym" style="left:72%;top:16%;font-size:72px">+</span><span class="sym" style="left:89%;top:58%;font-size:70px">×</span></div>
+<header>
+<div class="topMathFloaters" aria-hidden="true">
+  <span class="topMath plus">+</span>
+  <span class="topMath minus">−</span>
+  <span class="topMath times">×</span>
+  <span class="topMath divide">÷</span>
+</div><div class="bar"><div class="brand">✨ MathSpark Kids</div><div class="wallet"><span class="pill">🪙 <span id="coins">0</span></span><span class="pill">💎 <span id="gems">0</span></span><span class="pill">⭐ <span id="stars">0</span></span><div class="languageBox"><select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Language"><option value="en">🌍 English</option><option value="zh">🇨🇳 中文</option><option value="hi">🇮🇳 हिन्दी</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="ar">🇸🇦 العربية</option><option value="bn">🇧🇩 বাংলা</option><option value="pt">🇧🇷 Português</option><option value="ru">🇷🇺 Русский</option><option value="ur">🇵🇰 اردو</option><option value="ms">🇲🇾 Bahasa Melayu</option><option value="id">🇮🇩 Bahasa Indonesia</option><option value="th">🇹🇭 ไทย</option><option value="fil">🇵🇭 Filipino</option><option value="vi">🇻🇳 Tiếng Việt</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option></select></div><button class="sound" id="soundBtn" onclick="toggleSound()">🎵 Off</button></div></div></header>
+<nav class="nav"><button id="nav-home" class="active" onclick="showPage('home')">🏠 <span data-i18n="home">Home</span></button><button id="nav-world" onclick="showPage('world')">🗺️ <span data-i18n="worldMap">World Map</span></button><button id="nav-game" onclick="showPage('game')">🎮 <span data-i18n="game">Game</span></button><button id="nav-rewards" onclick="showPage('rewards')">🎁 <span data-i18n="rewards">Rewards</span></button></nav>
+<main>
+<section id="home" class="page active"><div class="hero">
+<div class="math-symbols" aria-hidden="true">
+  <span class="plus">+</span>
+  <span class="minus">−</span>
+  <span class="times">×</span>
+  <span class="divide">÷</span>
+  <span class="plus2">+</span>
+  <span class="times2">×</span>
+</div><div class="card"><span class="dailyBadge">🌍 17 Languages • 100 Levels</span><h1 data-i18n="heroTitle">Play, Learn & Become a Math Hero! 🚀</h1><p data-i18n="heroText">Build confidence with short, colourful maths challenges across five magical worlds.</p><button class="cta primary" onclick="showPage('world')" data-i18n="continueAdventure">Continue Adventure</button> <button class="cta secondary" onclick="claimDaily()">🎁 <span data-i18n="dailyReward">Daily Reward</span></button></div><div class="card mascotBox"><div id="homeMascot" class="mascot">🤖</div></div></div>
+<h2 class="sectionTitle" data-i18n="myProfile">My Profile</h2><div class="card profile"><div class="avatarBig" id="profileAvatar">🤖</div><div><h2 id="profileName">Math Hero</h2><small><span data-i18n="currentLevel">Current Level</span> <b id="profileLevel">1</b> • <span data-i18n="bestStreak">Best streak</span> <b id="bestStreak">0</b></small></div><button class="cta secondary" onclick="openProfile()" data-i18n="editProfile">Edit Profile</button></div>
+<h2 class="sectionTitle">📚 <span id="learningPathTitle">Learning Path</span></h2><div class="card curriculumPanel"><div><h2 id="ageHeading">Choose age group</h2><p id="ageHelp">MathSpark adapts the 100-level curriculum to the child’s learning stage.</p></div><div class="ageButtons"><button class="ageBtn" data-age="4-6" onclick="setAgeBand('4-6')">🧸 <b>4–6</b><small>Early Learner</small></button><button class="ageBtn" data-age="7-9" onclick="setAgeBand('7-9')">🎒 <b>7–9</b><small>Young Explorer</small></button><button class="ageBtn" data-age="10-12" onclick="setAgeBand('10-12')">🚀 <b>10–12</b><small>Math Challenger</small></button></div><div class="curriculumNow"><span>🎯</span><div><small id="currentObjectiveLabel">Current learning objective</small><b id="homeObjective">Numbers & counting</b></div></div></div><h2 class="sectionTitle" data-i18n="chooseBuddy">Choose Your Learning Buddy</h2><div class="charGrid" id="charGrid"></div>
+<h2 class="sectionTitle" data-i18n="dailyMissions">Daily Missions</h2><div class="missionGrid" id="missionGrid"></div>
+<h2 class="sectionTitle" data-i18n="dailyTreasure">Daily Treasure</h2><div class="card chestCard"><div id="chestIcon" class="chestIco">🔒</div><div><h2 id="chestTitle" data-i18n="missionChest">Mission Chest</h2><p id="chestText" data-i18n="completeMissions">Complete all 3 daily missions to unlock your treasure chest.</p></div><button id="chestBtn" class="cta primary" onclick="claimMissionChest()" disabled data-i18n="locked">Locked</button></div>
+<h2 class="sectionTitle" data-i18n="quickPlay">Quick Play</h2><div class="grid4"><div class="card mini" onclick="startMode('mixed')"><div class="ico">🧮</div><h3 data-i18n="mixedMath">Mixed Math</h3><p data-i18n="mixedDesc">Add, subtract, multiply and divide.</p></div><div class="card mini" onclick="startMode('speed')"><div class="ico">⚡</div><h3 data-i18n="speedRound">Speed Round</h3><p data-i18n="speedDesc">Build speed and number fluency.</p></div><div class="card mini" onclick="startMode('tables')"><div class="ico">✖️</div><h3 data-i18n="timesTables">Times Tables</h3><p data-i18n="tablesDesc">Practice multiplication facts.</p></div><div class="card mini" onclick="showPage('world')"><div class="ico">🏆</div><h3 data-i18n="adventure">Adventure</h3><p data-i18n="adventureDesc">Explore all five worlds and defeat bosses.</p></div></div>
+<h2 class="sectionTitle" data-i18n="todaysBonus">Today's Bonus</h2><div class="card rewardBanner"><div><h2>🎁 <span data-i18n="dailyTreasure">Daily Treasure</span></h2><p id="dailyText" data-i18n="dailyText">Come back every day for coins, gems and stars.</p></div><div class="gift">🎁</div><button id="dailyClaimBtn" class="cta primary" onclick="claimDaily()" data-i18n="claim">Claim</button></div></section>
+<section id="world" class="page"><div class="card"><div class="worldTop"><div><h1 style="margin:0">🗺️ <span data-i18n="mathAdventure">Math Adventure</span></h1><p data-i18n="worldHint" style="color:var(--muted)">Complete challenges to unlock the next level. Every 10th level is a Boss Battle 👑.</p></div><button class="cta primary" onclick="playLevel(state.max)"><span data-i18n="playLevel">Play Level</span> <span id="topLevel">1</span></button></div><div class="worldCards" id="worldCards"></div></div><div id="worldMap"></div></section>
+<section id="game" class="page"><div class="card gameWrap"><div id="gameWorldLabel" class="dailyBadge">🍭 Candy World</div><div class="stats"><div class="stat">🎯 <span data-i18n="level">Level</span> <span id="gameLevel">1</span></div><div class="stat">🔥 <span data-i18n="streak">Streak</span> <span id="streak">0</span></div><div class="stat">✅ <span id="correctCount">0</span>/<span id="targetCount">5</span></div></div><div id="speedTimerWrap" class="speedTimerWrap" style="display:none">
+  <span class="speedTimerIcon">⏱️</span>
+  <span id="speedTimerLabel">Time Left</span>
+  <strong id="speedTimer">30</strong>
+  <span>s</span>
+</div>
+<div class="progress"><div class="prog" id="gameProg"></div></div><div class="lessonObjective"><span>🎓</span><div><small id="objectiveLabel">Learning objective</small><b id="gameObjective">Numbers & counting</b></div></div><div class="question" id="question">Ready?</div><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><div style="text-align:center;margin-top:15px"><button class="cta secondary" onclick="showPage('world')">← <span data-i18n="worldMap">World Map</span></button></div></div></section>
+<section id="rewards" class="page"><h1>🎁 <span data-i18n="rewardsAchievements">Rewards & Achievements</span></h1><div class="rewardGrid" id="rewardGrid"></div><h2 class="sectionTitle">🏅 <span data-i18n="certificates">Certificates</span></h2><p class="tinyNotice" data-i18n="certHint">Finish each world to unlock a printable achievement certificate.</p><div class="certificateGrid" id="certificateGrid"></div><h2 class="sectionTitle" data-i18n="treasureShop">Treasure Shop</h2><div class="shopRow"><div class="card shopItem"><div style="font-size:42px">🎨</div><h3>Rainbow Trail</h3><p data-i18n="decorReward">Decorative reward for your profile.</p><button class="cta secondary" onclick="buyItem('Rainbow Trail',80)">🪙 80</button></div><div class="card shopItem"><div style="font-size:42px">👑</div><h3>Math Crown</h3><p data-i18n="crownReward">Show that you are a level explorer.</p><button class="cta secondary" onclick="buyItem('Math Crown',120)">🪙 120</button></div><div class="card shopItem"><div style="font-size:42px">🚀</div><h3>Rocket Badge</h3><p data-i18n="badgeReward">A special adventure badge.</p><button class="cta secondary" onclick="buyItem('Rocket Badge',5,'gem')">💎 5</button></div></div></section>
+</main><footer>MathSpark Kids • Learn a little every day 🌈</footer>
+<div class="modal" id="profileModal"><div class="card"><h2>👦 <span data-i18n="myProfile">My Profile</span></h2><input id="nameInput" class="nameInput" maxlength="16" placeholder="Nickname"><p style="color:var(--muted)" data-i18n="nicknameOnly">Use a nickname only — no full name needed.</p><button class="cta primary" onclick="saveProfile()" data-i18n="saveProfile">Save Profile</button> <button class="cta secondary" onclick="closeProfile()" data-i18n="cancel">Cancel</button></div></div>
+<div class="modal" id="certificateModal"><div class="card certificatePaper"><div style="font-size:54px">🏅</div><div class="certTitle">MathSpark Kids</div><h2 data-i18n="certificateAchievement">Certificate of Achievement</h2><p data-i18n="presentedTo">This certificate is proudly presented to</p><div class="certName" id="certName">Math Hero</div><p data-i18n="forCompleting">for successfully completing</p><div class="certWorld" id="certWorld">Candy World</div><p id="certLevel">Levels 1–20</p><p class="certMeta" id="certDate"></p><div class="certActions"><button class="cta primary" onclick="window.print()">🖨️ <span data-i18n="printCertificate">Print Certificate</span></button> <button class="cta secondary" onclick="closeCertificate()" data-i18n="close">Close</button></div></div></div>
+<script>
+const chars=[{name:'Robo',face:'🤖'},{name:'Panda',face:'🐼'},{name:'Fox',face:'🦊'},{name:'Dino',face:'🦖'},{name:'Unicorn',face:'🦄'}];
+const worlds=[
+ {key:'candy',name:'Candy World',icon:'🍭',from:1,to:20,cls:'themeCandy'},
+ {key:'ocean',name:'Ocean World',icon:'🐠',from:21,to:40,cls:'themeOcean'},
+ {key:'space',name:'Space World',icon:'🚀',from:41,to:60,cls:'themeSpace'},
+ {key:'dino',name:'Dinosaur World',icon:'🦖',from:61,to:80,cls:'themeDino'},
+ {key:'future',name:'Future City',icon:'🤖',from:81,to:100,cls:'themeFuture'}
+];
+const I18N={
+en:{home:'Home',worldMap:'World Map',game:'Game',rewards:'Rewards',heroTitle:'Play, Learn & Become a Math Hero! 🚀',heroText:'Build confidence with short, colourful maths challenges across five magical worlds.',continueAdventure:'Continue Adventure',dailyReward:'Daily Reward',myProfile:'My Profile',currentLevel:'Current Level',bestStreak:'Best streak',editProfile:'Edit Profile',chooseBuddy:'Choose Your Learning Buddy',dailyMissions:'Daily Missions',dailyTreasure:'Daily Treasure',missionChest:'Mission Chest',completeMissions:'Complete all 3 daily missions to unlock your treasure chest.',locked:'Locked',openChest:'Open Chest',quickPlay:'Quick Play',mixedMath:'Mixed Math',mixedDesc:'Add, subtract, multiply and divide.',speedRound:'Speed Round',speedDesc:'Build speed and number fluency.',timesTables:'Times Tables',tablesDesc:'Practice multiplication facts.',adventure:'Adventure',adventureDesc:'Explore all five worlds and defeat bosses.',todaysBonus:"Today's Bonus",dailyText:'Come back every day for coins, gems and stars.',claim:'Claim',mathAdventure:'Math Adventure',worldHint:'Complete challenges to unlock the next level. Every 10th level is a Boss Battle 👑.',playLevel:'Play Level',level:'Level',streak:'Streak',rewardsAchievements:'Rewards & Achievements',certificates:'Certificates',certHint:'Finish each world to unlock a printable achievement certificate.',treasureShop:'Treasure Shop',decorReward:'Decorative reward for your profile.',crownReward:'Show that you are a level explorer.',badgeReward:'A special adventure badge.',nicknameOnly:'Use a nickname only — no full name needed.',saveProfile:'Save Profile',cancel:'Cancel',certificateAchievement:'Certificate of Achievement',presentedTo:'This certificate is proudly presented to',forCompleting:'for successfully completing',printCertificate:'Print Certificate',close:'Close',correct:'Correct! 🌟',tryAgain:'Good try! Answer:',levelComplete:'Level complete! 🎉',bossDefeated:'Boss defeated! 👑🎉',unlocked:'Unlocked! 🎉',keepLearning:'Keep learning to unlock.',mission1:'Answer 10 correctly',mission2:'Complete 2 levels',mission3:'Earn 30 coins',claimed:'Claimed',dailyClaimed:'Daily reward claimed! 🎁',alreadyClaimed:'Daily reward already claimed today 🎁',chestClaimed:'Mission chest opened! 🎁',needMissions:'Complete all daily missions first.',worlds:{candy:'Candy World',ocean:'Ocean World',space:'Space World',dino:'Dinosaur World',future:'Future City'}},
+zh:{home:'主页',worldMap:'世界地图',game:'游戏',rewards:'奖励',heroTitle:'边玩边学，成为数学小英雄！🚀',heroText:'在五个奇妙世界中通过简短有趣的数学挑战建立自信。',continueAdventure:'继续冒险',dailyReward:'每日奖励',myProfile:'我的资料',currentLevel:'当前关卡',bestStreak:'最佳连胜',editProfile:'编辑资料',chooseBuddy:'选择学习伙伴',dailyMissions:'每日任务',dailyTreasure:'每日宝箱',missionChest:'任务宝箱',completeMissions:'完成3个每日任务即可解锁宝箱。',locked:'未解锁',openChest:'打开宝箱',quickPlay:'快速游戏',mixedMath:'混合数学',mixedDesc:'加、减、乘、除练习。',speedRound:'速度挑战',speedDesc:'提升计算速度和数字流畅度。',timesTables:'乘法表',tablesDesc:'练习乘法口诀。',adventure:'冒险',adventureDesc:'探索五个世界并挑战Boss。',todaysBonus:'今日奖励',dailyText:'每天回来领取金币、宝石和星星。',claim:'领取',mathAdventure:'数学冒险',worldHint:'完成挑战解锁下一关。每10关都是Boss战 👑。',playLevel:'开始关卡',level:'关卡',streak:'连胜',rewardsAchievements:'奖励与成就',certificates:'证书',certHint:'完成每个世界即可解锁可打印的成就证书。',treasureShop:'宝藏商店',decorReward:'用于个人资料的装饰奖励。',crownReward:'展示你的探索成就。',badgeReward:'特别冒险徽章。',nicknameOnly:'只使用昵称，不需要全名。',saveProfile:'保存资料',cancel:'取消',certificateAchievement:'成就证书',presentedTo:'特此颁发给',forCompleting:'成功完成',printCertificate:'打印证书',close:'关闭',correct:'答对了！🌟',tryAgain:'继续加油！答案：',levelComplete:'关卡完成！🎉',bossDefeated:'Boss已击败！👑🎉',unlocked:'已解锁！🎉',keepLearning:'继续学习即可解锁。',mission1:'答对10题',mission2:'完成2个关卡',mission3:'获得30金币',claimed:'已领取',dailyClaimed:'每日奖励已领取！🎁',alreadyClaimed:'今天已经领取过每日奖励 🎁',chestClaimed:'任务宝箱已打开！🎁',needMissions:'请先完成所有每日任务。',worlds:{candy:'糖果世界',ocean:'海洋世界',space:'太空世界',dino:'恐龙世界',future:'未来城市'}},
+hi:{home:'होम',worldMap:'वर्ल्ड मैप',game:'गेम',rewards:'इनाम',heroTitle:'खेलो, सीखो और मैथ हीरो बनो! 🚀',heroText:'पाँच जादुई दुनियाओं में छोटे और रंगीन गणित अभ्यासों से आत्मविश्वास बढ़ाओ।',continueAdventure:'एडवेंचर जारी रखें',dailyReward:'दैनिक इनाम',myProfile:'मेरी प्रोफ़ाइल',currentLevel:'वर्तमान लेवल',bestStreak:'सर्वश्रेष्ठ स्ट्रीक',editProfile:'प्रोफ़ाइल बदलें',chooseBuddy:'अपना लर्निंग बडी चुनें',dailyMissions:'दैनिक मिशन',dailyTreasure:'दैनिक खज़ाना',missionChest:'मिशन चेस्ट',completeMissions:'चेस्ट खोलने के लिए सभी 3 दैनिक मिशन पूरे करें।',locked:'लॉक',openChest:'चेस्ट खोलें',quickPlay:'क्विक प्ले',mixedMath:'मिक्स्ड मैथ',mixedDesc:'जोड़, घटाव, गुणा और भाग।',speedRound:'स्पीड राउंड',speedDesc:'गति और संख्या कौशल बढ़ाएँ।',timesTables:'पहाड़े',tablesDesc:'गुणा का अभ्यास करें।',adventure:'एडवेंचर',adventureDesc:'पाँचों दुनिया खोजें और बॉस हराएँ।',todaysBonus:'आज का बोनस',dailyText:'हर दिन कॉइन, जेम और स्टार पाने आएँ।',claim:'क्लेम',mathAdventure:'मैथ एडवेंचर',worldHint:'अगला लेवल खोलने के लिए चुनौती पूरी करें। हर 10वाँ लेवल बॉस बैटल है 👑।',playLevel:'लेवल खेलें',level:'लेवल',streak:'स्ट्रीक',rewardsAchievements:'इनाम और उपलब्धियाँ',certificates:'सर्टिफिकेट',certHint:'हर दुनिया पूरी कर प्रिंट करने योग्य सर्टिफिकेट खोलें।',treasureShop:'ट्रेज़र शॉप',decorReward:'आपकी प्रोफ़ाइल के लिए सजावटी इनाम।',crownReward:'दिखाएँ कि आप लेवल एक्सप्लोरर हैं।',badgeReward:'एक खास एडवेंचर बैज।',nicknameOnly:'केवल निकनेम इस्तेमाल करें — पूरा नाम नहीं।',saveProfile:'सेव करें',cancel:'रद्द करें',certificateAchievement:'उपलब्धि प्रमाणपत्र',presentedTo:'यह प्रमाणपत्र दिया जाता है',forCompleting:'सफलतापूर्वक पूरा करने के लिए',printCertificate:'सर्टिफिकेट प्रिंट करें',close:'बंद करें',correct:'सही! 🌟',tryAgain:'अच्छी कोशिश! उत्तर:',levelComplete:'लेवल पूरा! 🎉',bossDefeated:'बॉस हार गया! 👑🎉',unlocked:'अनलॉक! 🎉',keepLearning:'अनलॉक करने के लिए सीखते रहें।',mission1:'10 सही उत्तर दें',mission2:'2 लेवल पूरे करें',mission3:'30 कॉइन कमाएँ',claimed:'क्लेम किया',dailyClaimed:'दैनिक इनाम मिल गया! 🎁',alreadyClaimed:'आज का दैनिक इनाम पहले ही मिल चुका है 🎁',chestClaimed:'मिशन चेस्ट खुल गया! 🎁',needMissions:'पहले सभी दैनिक मिशन पूरे करें।',worlds:{candy:'कैंडी वर्ल्ड',ocean:'ओशन वर्ल्ड',space:'स्पेस वर्ल्ड',dino:'डायनासोर वर्ल्ड',future:'फ्यूचर सिटी'}},
+es:{home:'Inicio',worldMap:'Mapa Mundial',game:'Juego',rewards:'Premios',heroTitle:'¡Juega, aprende y conviértete en héroe de matemáticas! 🚀',heroText:'Gana confianza con retos matemáticos cortos y coloridos en cinco mundos mágicos.',continueAdventure:'Continuar aventura',dailyReward:'Premio diario',myProfile:'Mi perfil',currentLevel:'Nivel actual',bestStreak:'Mejor racha',editProfile:'Editar perfil',chooseBuddy:'Elige tu compañero',dailyMissions:'Misiones diarias',dailyTreasure:'Tesoro diario',missionChest:'Cofre de misiones',completeMissions:'Completa las 3 misiones diarias para abrir el cofre.',locked:'Bloqueado',openChest:'Abrir cofre',quickPlay:'Juego rápido',mixedMath:'Matemáticas mixtas',mixedDesc:'Suma, resta, multiplica y divide.',speedRound:'Ronda rápida',speedDesc:'Mejora la velocidad y fluidez numérica.',timesTables:'Tablas',tablesDesc:'Practica las tablas de multiplicar.',adventure:'Aventura',adventureDesc:'Explora cinco mundos y derrota jefes.',todaysBonus:'Bono de hoy',dailyText:'Vuelve cada día por monedas, gemas y estrellas.',claim:'Reclamar',mathAdventure:'Aventura matemática',worldHint:'Completa retos para desbloquear el siguiente nivel. Cada nivel 10 es un jefe 👑.',playLevel:'Jugar nivel',level:'Nivel',streak:'Racha',rewardsAchievements:'Premios y logros',certificates:'Certificados',certHint:'Completa cada mundo para desbloquear un certificado imprimible.',treasureShop:'Tienda del tesoro',decorReward:'Premio decorativo para tu perfil.',crownReward:'Demuestra que eres explorador de niveles.',badgeReward:'Una insignia especial de aventura.',nicknameOnly:'Usa solo un apodo, no tu nombre completo.',saveProfile:'Guardar perfil',cancel:'Cancelar',certificateAchievement:'Certificado de logro',presentedTo:'Este certificado se entrega a',forCompleting:'por completar con éxito',printCertificate:'Imprimir certificado',close:'Cerrar',correct:'¡Correcto! 🌟',tryAgain:'¡Buen intento! Respuesta:',levelComplete:'¡Nivel completado! 🎉',bossDefeated:'¡Jefe derrotado! 👑🎉',unlocked:'¡Desbloqueado! 🎉',keepLearning:'Sigue aprendiendo para desbloquear.',mission1:'Responde 10 correctamente',mission2:'Completa 2 niveles',mission3:'Gana 30 monedas',claimed:'Reclamado',dailyClaimed:'¡Premio diario reclamado! 🎁',alreadyClaimed:'Ya reclamaste el premio de hoy 🎁',chestClaimed:'¡Cofre de misión abierto! 🎁',needMissions:'Completa primero todas las misiones.',worlds:{candy:'Mundo Dulce',ocean:'Mundo Océano',space:'Mundo Espacial',dino:'Mundo Dinosaurio',future:'Ciudad del Futuro'}},
+fr:{home:'Accueil',worldMap:'Carte du monde',game:'Jeu',rewards:'Récompenses',heroTitle:'Joue, apprends et deviens un héros des maths ! 🚀',heroText:'Développe ta confiance avec de petits défis colorés dans cinq mondes magiques.',continueAdventure:"Continuer l'aventure",dailyReward:'Récompense quotidienne',myProfile:'Mon profil',currentLevel:'Niveau actuel',bestStreak:'Meilleure série',editProfile:'Modifier le profil',chooseBuddy:"Choisis ton compagnon",dailyMissions:'Missions quotidiennes',dailyTreasure:'Trésor quotidien',missionChest:'Coffre de missions',completeMissions:'Termine les 3 missions quotidiennes pour ouvrir le coffre.',locked:'Verrouillé',openChest:'Ouvrir le coffre',quickPlay:'Jeu rapide',mixedMath:'Maths mixtes',mixedDesc:'Addition, soustraction, multiplication et division.',speedRound:'Défi vitesse',speedDesc:'Améliore ta rapidité de calcul.',timesTables:'Tables',tablesDesc:'Entraîne-toi aux multiplications.',adventure:'Aventure',adventureDesc:'Explore les cinq mondes et bats les boss.',todaysBonus:"Bonus du jour",dailyText:'Reviens chaque jour pour des pièces, gemmes et étoiles.',claim:'Réclamer',mathAdventure:'Aventure mathématique',worldHint:'Réussis les défis pour débloquer le niveau suivant. Chaque niveau 10 est un boss 👑.',playLevel:'Jouer niveau',level:'Niveau',streak:'Série',rewardsAchievements:'Récompenses et succès',certificates:'Certificats',certHint:'Termine chaque monde pour débloquer un certificat imprimable.',treasureShop:'Boutique au trésor',decorReward:'Récompense décorative pour ton profil.',crownReward:'Montre que tu es un explorateur de niveaux.',badgeReward:"Un badge d'aventure spécial.",nicknameOnly:'Utilise seulement un surnom, pas ton nom complet.',saveProfile:'Enregistrer',cancel:'Annuler',certificateAchievement:'Certificat de réussite',presentedTo:'Ce certificat est remis à',forCompleting:'pour avoir terminé avec succès',printCertificate:'Imprimer le certificat',close:'Fermer',correct:'Correct ! 🌟',tryAgain:'Bien essayé ! Réponse :',levelComplete:'Niveau terminé ! 🎉',bossDefeated:'Boss vaincu ! 👑🎉',unlocked:'Débloqué ! 🎉',keepLearning:'Continue à apprendre pour débloquer.',mission1:'10 bonnes réponses',mission2:'Terminer 2 niveaux',mission3:'Gagner 30 pièces',claimed:'Réclamé',dailyClaimed:'Récompense quotidienne obtenue ! 🎁',alreadyClaimed:'Récompense déjà obtenue aujourd’hui 🎁',chestClaimed:'Coffre de mission ouvert ! 🎁',needMissions:'Termine d’abord toutes les missions.',worlds:{candy:'Monde Bonbon',ocean:'Monde Océan',space:'Monde Spatial',dino:'Monde Dinosaure',future:'Ville du Futur'}},
+ar:{home:'الرئيسية',worldMap:'خريطة العالم',game:'اللعبة',rewards:'المكافآت',heroTitle:'العب وتعلّم وكن بطل الرياضيات! 🚀',heroText:'ابنِ ثقتك بتحديات رياضيات قصيرة وملونة عبر خمسة عوالم سحرية.',continueAdventure:'متابعة المغامرة',dailyReward:'المكافأة اليومية',myProfile:'ملفي',currentLevel:'المستوى الحالي',bestStreak:'أفضل سلسلة',editProfile:'تعديل الملف',chooseBuddy:'اختر رفيق التعلم',dailyMissions:'المهام اليومية',dailyTreasure:'كنز يومي',missionChest:'صندوق المهام',completeMissions:'أكمل المهام اليومية الثلاث لفتح صندوق الكنز.',locked:'مغلق',openChest:'افتح الصندوق',quickPlay:'لعب سريع',mixedMath:'رياضيات متنوعة',mixedDesc:'جمع وطرح وضرب وقسمة.',speedRound:'جولة السرعة',speedDesc:'طوّر السرعة والطلاقة العددية.',timesTables:'جدول الضرب',tablesDesc:'تدرّب على حقائق الضرب.',adventure:'مغامرة',adventureDesc:'استكشف العوالم الخمسة واهزم الزعماء.',todaysBonus:'مكافأة اليوم',dailyText:'عد كل يوم للحصول على العملات والجواهر والنجوم.',claim:'استلام',mathAdventure:'مغامرة الرياضيات',worldHint:'أكمل التحديات لفتح المستوى التالي. كل مستوى عاشر معركة زعيم 👑.',playLevel:'العب المستوى',level:'المستوى',streak:'السلسلة',rewardsAchievements:'المكافآت والإنجازات',certificates:'الشهادات',certHint:'أكمل كل عالم لفتح شهادة إنجاز قابلة للطباعة.',treasureShop:'متجر الكنز',decorReward:'مكافأة زخرفية لملفك.',crownReward:'أظهر أنك مستكشف للمستويات.',badgeReward:'شارة مغامرة خاصة.',nicknameOnly:'استخدم اسمًا مستعارًا فقط — لا حاجة للاسم الكامل.',saveProfile:'حفظ الملف',cancel:'إلغاء',certificateAchievement:'شهادة إنجاز',presentedTo:'تُمنح هذه الشهادة إلى',forCompleting:'لإكماله بنجاح',printCertificate:'طباعة الشهادة',close:'إغلاق',correct:'إجابة صحيحة! 🌟',tryAgain:'محاولة جيدة! الإجابة:',levelComplete:'اكتمل المستوى! 🎉',bossDefeated:'تم هزيمة الزعيم! 👑🎉',unlocked:'تم الفتح! 🎉',keepLearning:'واصل التعلم لفتحها.',mission1:'أجب عن 10 إجابات صحيحة',mission2:'أكمل مستويين',mission3:'اكسب 30 عملة',claimed:'تم الاستلام',dailyClaimed:'تم استلام المكافأة اليومية! 🎁',alreadyClaimed:'تم استلام مكافأة اليوم بالفعل 🎁',chestClaimed:'تم فتح صندوق المهام! 🎁',needMissions:'أكمل جميع المهام اليومية أولاً.',worlds:{candy:'عالم الحلوى',ocean:'عالم المحيط',space:'عالم الفضاء',dino:'عالم الديناصورات',future:'مدينة المستقبل'}},
+bn:{home:'হোম',worldMap:'বিশ্ব মানচিত্র',game:'গেম',rewards:'পুরস্কার',heroTitle:'খেলো, শেখো আর ম্যাথ হিরো হও! 🚀',heroText:'পাঁচটি মজার জগতে ছোট ও রঙিন গণিত চ্যালেঞ্জে আত্মবিশ্বাস বাড়াও।',continueAdventure:'অ্যাডভেঞ্চার চালিয়ে যাও',dailyReward:'দৈনিক পুরস্কার',myProfile:'আমার প্রোফাইল',currentLevel:'বর্তমান লেভেল',bestStreak:'সেরা স্ট্রিক',editProfile:'প্রোফাইল বদলাও',chooseBuddy:'শেখার সঙ্গী বেছে নাও',dailyMissions:'দৈনিক মিশন',dailyTreasure:'দৈনিক ট্রেজার',missionChest:'মিশন চেস্ট',completeMissions:'চেস্ট খুলতে ৩টি দৈনিক মিশন শেষ করো।',locked:'লক',openChest:'চেস্ট খোলো',quickPlay:'কুইক প্লে',mixedMath:'মিক্সড ম্যাথ',mixedDesc:'যোগ, বিয়োগ, গুণ ও ভাগ।',speedRound:'স্পিড রাউন্ড',speedDesc:'দ্রুত হিসাবের দক্ষতা বাড়াও।',timesTables:'নামতা',tablesDesc:'গুণের অনুশীলন করো।',adventure:'অ্যাডভেঞ্চার',adventureDesc:'পাঁচটি জগত ঘুরে বসকে হারাও।',todaysBonus:'আজকের বোনাস',dailyText:'প্রতিদিন কয়েন, জেম ও স্টারের জন্য ফিরে এসো।',claim:'নাও',mathAdventure:'ম্যাথ অ্যাডভেঞ্চার',worldHint:'পরের লেভেল খুলতে চ্যালেঞ্জ শেষ করো। প্রতি ১০ম লেভেলে বস ব্যাটল 👑।',playLevel:'লেভেল খেলো',level:'লেভেল',streak:'স্ট্রিক',rewardsAchievements:'পুরস্কার ও অর্জন',certificates:'সার্টিফিকেট',certHint:'প্রতিটি জগত শেষ করে প্রিন্টযোগ্য সার্টিফিকেট আনলক করো।',treasureShop:'ট্রেজার শপ',decorReward:'তোমার প্রোফাইলের সাজসজ্জার পুরস্কার।',crownReward:'দেখাও তুমি একজন লেভেল এক্সপ্লোরার।',badgeReward:'বিশেষ অ্যাডভেঞ্চার ব্যাজ।',nicknameOnly:'শুধু ডাকনাম ব্যবহার করো — পুরো নাম নয়।',saveProfile:'সেভ করো',cancel:'বাতিল',certificateAchievement:'অর্জনের সার্টিফিকেট',presentedTo:'এই সার্টিফিকেট প্রদান করা হলো',forCompleting:'সফলভাবে শেষ করার জন্য',printCertificate:'সার্টিফিকেট প্রিন্ট',close:'বন্ধ',correct:'সঠিক! 🌟',tryAgain:'ভালো চেষ্টা! উত্তর:',levelComplete:'লেভেল শেষ! 🎉',bossDefeated:'বস পরাজিত! 👑🎉',unlocked:'আনলক হয়েছে! 🎉',keepLearning:'আনলক করতে শেখা চালিয়ে যাও।',mission1:'১০টি সঠিক উত্তর',mission2:'২টি লেভেল শেষ করো',mission3:'৩০ কয়েন অর্জন করো',claimed:'নেওয়া হয়েছে',dailyClaimed:'দৈনিক পুরস্কার পাওয়া গেছে! 🎁',alreadyClaimed:'আজকের পুরস্কার আগেই নেওয়া হয়েছে 🎁',chestClaimed:'মিশন চেস্ট খোলা হয়েছে! 🎁',needMissions:'আগে সব দৈনিক মিশন শেষ করো।',worlds:{candy:'ক্যান্ডি ওয়ার্ল্ড',ocean:'ওশান ওয়ার্ল্ড',space:'স্পেস ওয়ার্ল্ড',dino:'ডাইনোসর ওয়ার্ল্ড',future:'ফিউচার সিটি'}},
+pt:{home:'Início',worldMap:'Mapa do Mundo',game:'Jogo',rewards:'Prêmios',heroTitle:'Jogue, aprenda e vire um herói da matemática! 🚀',heroText:'Ganhe confiança com desafios curtos e coloridos em cinco mundos mágicos.',continueAdventure:'Continuar aventura',dailyReward:'Prêmio diário',myProfile:'Meu perfil',currentLevel:'Nível atual',bestStreak:'Melhor sequência',editProfile:'Editar perfil',chooseBuddy:'Escolha seu parceiro',dailyMissions:'Missões diárias',dailyTreasure:'Tesouro diário',missionChest:'Baú de missões',completeMissions:'Complete as 3 missões diárias para abrir o baú.',locked:'Bloqueado',openChest:'Abrir baú',quickPlay:'Jogo rápido',mixedMath:'Matemática mista',mixedDesc:'Somar, subtrair, multiplicar e dividir.',speedRound:'Rodada rápida',speedDesc:'Melhore velocidade e fluência numérica.',timesTables:'Tabuada',tablesDesc:'Pratique multiplicação.',adventure:'Aventura',adventureDesc:'Explore os cinco mundos e derrote chefes.',todaysBonus:'Bônus de hoje',dailyText:'Volte todos os dias por moedas, gemas e estrelas.',claim:'Resgatar',mathAdventure:'Aventura Matemática',worldHint:'Complete desafios para liberar o próximo nível. Cada nível 10 tem um chefe 👑.',playLevel:'Jogar nível',level:'Nível',streak:'Sequência',rewardsAchievements:'Prêmios e conquistas',certificates:'Certificados',certHint:'Termine cada mundo para liberar um certificado imprimível.',treasureShop:'Loja do Tesouro',decorReward:'Recompensa decorativa para seu perfil.',crownReward:'Mostre que você é explorador de níveis.',badgeReward:'Um distintivo especial de aventura.',nicknameOnly:'Use apenas um apelido — não precisa do nome completo.',saveProfile:'Salvar perfil',cancel:'Cancelar',certificateAchievement:'Certificado de Conquista',presentedTo:'Este certificado é apresentado a',forCompleting:'por concluir com sucesso',printCertificate:'Imprimir certificado',close:'Fechar',correct:'Correto! 🌟',tryAgain:'Boa tentativa! Resposta:',levelComplete:'Nível concluído! 🎉',bossDefeated:'Chefe derrotado! 👑🎉',unlocked:'Liberado! 🎉',keepLearning:'Continue aprendendo para liberar.',mission1:'Acerte 10 respostas',mission2:'Complete 2 níveis',mission3:'Ganhe 30 moedas',claimed:'Resgatado',dailyClaimed:'Prêmio diário resgatado! 🎁',alreadyClaimed:'O prêmio de hoje já foi resgatado 🎁',chestClaimed:'Baú de missão aberto! 🎁',needMissions:'Complete todas as missões primeiro.',worlds:{candy:'Mundo dos Doces',ocean:'Mundo Oceano',space:'Mundo Espacial',dino:'Mundo dos Dinossauros',future:'Cidade do Futuro'}},
+ru:{home:'Главная',worldMap:'Карта мира',game:'Игра',rewards:'Награды',heroTitle:'Играй, учись и стань героем математики! 🚀',heroText:'Развивай уверенность с короткими яркими заданиями в пяти волшебных мирах.',continueAdventure:'Продолжить приключение',dailyReward:'Ежедневная награда',myProfile:'Мой профиль',currentLevel:'Текущий уровень',bestStreak:'Лучшая серия',editProfile:'Изменить профиль',chooseBuddy:'Выбери помощника',dailyMissions:'Ежедневные миссии',dailyTreasure:'Ежедневное сокровище',missionChest:'Сундук миссий',completeMissions:'Выполни 3 ежедневные миссии, чтобы открыть сундук.',locked:'Закрыто',openChest:'Открыть сундук',quickPlay:'Быстрая игра',mixedMath:'Смешанная математика',mixedDesc:'Сложение, вычитание, умножение и деление.',speedRound:'Скоростной раунд',speedDesc:'Развивай скорость счёта.',timesTables:'Таблица умножения',tablesDesc:'Тренируй умножение.',adventure:'Приключение',adventureDesc:'Исследуй пять миров и побеждай боссов.',todaysBonus:'Бонус дня',dailyText:'Возвращайся каждый день за монетами, кристаллами и звёздами.',claim:'Забрать',mathAdventure:'Математическое приключение',worldHint:'Выполняй задания, чтобы открывать уровни. Каждый 10-й уровень — босс 👑.',playLevel:'Играть уровень',level:'Уровень',streak:'Серия',rewardsAchievements:'Награды и достижения',certificates:'Сертификаты',certHint:'Заверши каждый мир и открой сертификат для печати.',treasureShop:'Магазин сокровищ',decorReward:'Украшение для твоего профиля.',crownReward:'Покажи, что ты исследователь уровней.',badgeReward:'Особый значок приключения.',nicknameOnly:'Используй только никнейм — полное имя не нужно.',saveProfile:'Сохранить',cancel:'Отмена',certificateAchievement:'Сертификат достижения',presentedTo:'Этот сертификат вручается',forCompleting:'за успешное завершение',printCertificate:'Печать сертификата',close:'Закрыть',correct:'Правильно! 🌟',tryAgain:'Хорошая попытка! Ответ:',levelComplete:'Уровень пройден! 🎉',bossDefeated:'Босс побеждён! 👑🎉',unlocked:'Открыто! 🎉',keepLearning:'Продолжай учиться, чтобы открыть.',mission1:'Ответь правильно 10 раз',mission2:'Пройди 2 уровня',mission3:'Заработай 30 монет',claimed:'Получено',dailyClaimed:'Ежедневная награда получена! 🎁',alreadyClaimed:'Сегодня награда уже получена 🎁',chestClaimed:'Сундук миссий открыт! 🎁',needMissions:'Сначала выполни все миссии.',worlds:{candy:'Конфетный мир',ocean:'Океан',space:'Космос',dino:'Мир динозавров',future:'Город будущего'}},
+ur:{home:'ہوم',worldMap:'دنیا کا نقشہ',game:'گیم',rewards:'انعامات',heroTitle:'کھیلو، سیکھو اور میتھ ہیرو بنو! 🚀',heroText:'پانچ جادوئی دنیاؤں میں مختصر اور رنگین ریاضی چیلنجز سے اعتماد بڑھاؤ۔',continueAdventure:'مہم جاری رکھیں',dailyReward:'روزانہ انعام',myProfile:'میری پروفائل',currentLevel:'موجودہ لیول',bestStreak:'بہترین سلسلہ',editProfile:'پروفائل تبدیل کریں',chooseBuddy:'اپنا ساتھی منتخب کریں',dailyMissions:'روزانہ مشنز',dailyTreasure:'روزانہ خزانہ',missionChest:'مشن چیسٹ',completeMissions:'خزانہ کھولنے کے لیے تینوں روزانہ مشنز مکمل کریں۔',locked:'بند',openChest:'چیسٹ کھولیں',quickPlay:'فوری کھیل',mixedMath:'مکسڈ میتھ',mixedDesc:'جمع، تفریق، ضرب اور تقسیم۔',speedRound:'اسپیڈ راؤنڈ',speedDesc:'رفتار اور عددی مہارت بڑھائیں۔',timesTables:'پہاڑے',tablesDesc:'ضرب کی مشق کریں۔',adventure:'مہم',adventureDesc:'پانچوں دنیائیں دریافت کریں اور باس کو شکست دیں۔',todaysBonus:'آج کا بونس',dailyText:'روزانہ سکے، جیمز اور ستاروں کے لیے واپس آئیں۔',claim:'حاصل کریں',mathAdventure:'میتھ ایڈونچر',worldHint:'اگلا لیول کھولنے کے لیے چیلنج مکمل کریں۔ ہر دسواں لیول باس بیٹل ہے 👑۔',playLevel:'لیول کھیلیں',level:'لیول',streak:'سلسلہ',rewardsAchievements:'انعامات اور کامیابیاں',certificates:'سرٹیفکیٹس',certHint:'ہر دنیا مکمل کرکے قابلِ پرنٹ سرٹیفکیٹ حاصل کریں۔',treasureShop:'ٹریژر شاپ',decorReward:'آپ کی پروفائل کے لیے سجاوٹی انعام۔',crownReward:'دکھائیں کہ آپ لیول ایکسپلورر ہیں۔',badgeReward:'خاص ایڈونچر بیج۔',nicknameOnly:'صرف عرفی نام استعمال کریں — پورا نام ضروری نہیں۔',saveProfile:'پروفائل محفوظ کریں',cancel:'منسوخ',certificateAchievement:'کامیابی کا سرٹیفکیٹ',presentedTo:'یہ سرٹیفکیٹ پیش کیا جاتا ہے',forCompleting:'کامیابی سے مکمل کرنے پر',printCertificate:'سرٹیفکیٹ پرنٹ کریں',close:'بند کریں',correct:'درست! 🌟',tryAgain:'اچھی کوشش! جواب:',levelComplete:'لیول مکمل! 🎉',bossDefeated:'باس شکست کھا گیا! 👑🎉',unlocked:'کھل گیا! 🎉',keepLearning:'کھولنے کے لیے سیکھتے رہیں۔',mission1:'10 درست جواب دیں',mission2:'2 لیول مکمل کریں',mission3:'30 سکے کمائیں',claimed:'حاصل کیا',dailyClaimed:'روزانہ انعام مل گیا! 🎁',alreadyClaimed:'آج کا انعام پہلے ہی مل چکا ہے 🎁',chestClaimed:'مشن چیسٹ کھل گیا! 🎁',needMissions:'پہلے تمام روزانہ مشنز مکمل کریں۔',worlds:{candy:'کینڈی ورلڈ',ocean:'اوشن ورلڈ',space:'اسپیس ورلڈ',dino:'ڈائنوسار ورلڈ',future:'فیوچر سٹی'}}
+};
+const $=id=>document.getElementById(id); const coins=$('coins'),gems=$('gems'),stars=$('stars'),profileName=$('profileName'),profileAvatar=$('profileAvatar'),homeMascot=$('homeMascot'),profileLevel=$('profileLevel'),bestStreak=$('bestStreak'),topLevel=$('topLevel'),charGrid=$('charGrid'),worldMap=$('worldMap'),worldCards=$('worldCards'),gameLevel=$('gameLevel'),correctCount=$('correctCount'),targetCount=$('targetCount'),gameProg=$('gameProg'),feedback=$('feedback'),question=$('question'),answers=$('answers'),rewardGrid=$('rewardGrid'),certificateGrid=$('certificateGrid'),profileModal=$('profileModal'),certificateModal=$('certificateModal'),nameInput=$('nameInput'),dailyText=$('dailyText'),soundBtn=$('soundBtn'),missionGrid=$('missionGrid'),chestBtn=$('chestBtn'),chestIcon=$('chestIcon'),chestText=$('chestText'),gameWorldLabel=$('gameWorldLabel'),langSelect=$('langSelect');
+let state={name:localStorage.getItem('ms_name')||'Math Hero',char:+(localStorage.getItem('ms_char')||0),coins:+(localStorage.getItem('ms_coins')||0),gems:+(localStorage.getItem('ms_gems')||0),stars:+(localStorage.getItem('ms_stars')||0),max:+(localStorage.getItem('ms_max')||1),best:+(localStorage.getItem('ms_best')||0),lang:localStorage.getItem('ms_lang')||'en',ageBand:localStorage.getItem('ms_age')||'7-9'};
+let soundOn=false,audioCtx=null,musicTimer=null,currentLevel=1,correct=0,streak=0,currentQ=null,mode='adventure';
+function t(k){return (I18N[state.lang]&&I18N[state.lang][k])||I18N.en[k]||k}function worldName(w){return (I18N[state.lang].worlds||I18N.en.worlds)[w.key]||w.name}function todayKey(){let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function getDaily(){let k=todayKey(),d;try{d=JSON.parse(localStorage.getItem('ms_missions')||'{}')}catch(e){d={}}if(d.date!==k)d={date:k,correct:0,levels:0,coins:0,chest:false};return d}function setDaily(d){localStorage.setItem('ms_missions',JSON.stringify(d))}
+function save(){localStorage.setItem('ms_name',state.name);localStorage.setItem('ms_char',state.char);localStorage.setItem('ms_coins',state.coins);localStorage.setItem('ms_gems',state.gems);localStorage.setItem('ms_stars',state.stars);localStorage.setItem('ms_max',state.max);localStorage.setItem('ms_best',state.best);localStorage.setItem('ms_lang',state.lang);renderUI()}
+function applyLanguage(){document.documentElement.lang=state.lang;document.body.dir=['ar','ur'].includes(state.lang)?'rtl':'ltr';langSelect.value=state.lang;document.querySelectorAll('[data-i18n]').forEach(el=>{let key=el.dataset.i18n;if(t(key))el.textContent=t(key)});renderUI()}
+function changeLanguage(v){state.lang=v;save();applyLanguage()}
+function renderUI(){coins.textContent=state.coins;gems.textContent=state.gems;stars.textContent=state.stars;profileName.textContent=state.name;profileAvatar.textContent=chars[state.char].face;homeMascot.textContent=chars[state.char].face;profileLevel.textContent=state.max;bestStreak.textContent=state.best;topLevel.textContent=state.max;renderChars();renderMap();renderRewards();renderMissions();renderCertificates();updateDailyTreasureUI()}
+function showPage(id){if(id!=='game')stopSpeedTimer();document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');$('nav-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function renderChars(){charGrid.innerHTML=chars.map((c,i)=>`<button class="char ${i===state.char?'active':''}" onclick="chooseChar(${i})"><div class="face">${c.face}</div><b>${c.name}</b></button>`).join('')}function chooseChar(i){state.char=i;save();pop('✨ '+chars[i].name)}
+function openProfile(){nameInput.value=state.name;profileModal.classList.add('show')}function closeProfile(){profileModal.classList.remove('show')}function saveProfile(){state.name=(nameInput.value.trim()||'Math Hero').slice(0,16);save();closeProfile()}
+function renderMissions(){let d=getDaily(),items=[[t('mission1'),'🧠',d.correct,10],[t('mission2'),'🏁',d.levels,2],[t('mission3'),'🪙',d.coins,30]];missionGrid.innerHTML=items.map(x=>{let pct=Math.min(100,x[2]/x[3]*100);return `<div class="card mission"><div class="missionIcon">${x[1]}</div><b>${x[0]}</b><p>${Math.min(x[2],x[3])}/${x[3]} ${x[2]>=x[3]?'✅':''}</p><div class="missionBar"><div class="missionFill" style="width:${pct}%"></div></div></div>`}).join('');let ready=d.correct>=10&&d.levels>=2&&d.coins>=30;if(d.chest){chestIcon.textContent='✅';chestBtn.disabled=true;chestBtn.textContent=t('claimed');chestText.textContent=t('chestClaimed')}else if(ready){chestIcon.textContent='🎁';chestBtn.disabled=false;chestBtn.textContent=t('openChest');chestText.textContent='🪙 40 • 💎 2 • ⭐ 10'}else{chestIcon.textContent='🔒';chestBtn.disabled=true;chestBtn.textContent=t('locked');chestText.textContent=t('completeMissions')}}
+function addMission(type,n){let d=getDaily();d[type]=(d[type]||0)+n;setDaily(d);renderMissions()}function claimMissionChest(){let d=getDaily();if(d.chest)return;let ready=d.correct>=10&&d.levels>=2&&d.coins>=30;if(!ready){pop(t('needMissions'));return}d.chest=true;setDaily(d);state.coins+=40;state.gems+=2;state.stars+=10;save();confetti();if(soundOn&&typeof playRewardSound==='function')playRewardSound();pop(t('chestClaimed'))}
+function renderMap(){worldCards.innerHTML=worlds.map((w,i)=>`<button class="worldCard wc${i}" onclick="scrollWorld(${i})"><div class="wi">${w.icon}</div><b>${worldName(w)}</b><small>${w.from}–${w.to} ${state.max>w.to?'✅':state.max>=w.from?'▶️':'🔒'}</small></button>`).join('');worldMap.innerHTML=worlds.map((w,wi)=>{let nodes='';for(let i=w.from;i<=w.to;i++){let cls='node '+(i%10===0?'boss ':''),html;if(i<state.max)cls+='done open ';else if(i===state.max)cls+='open current ';if(i<=state.max){html=i%10===0?`👑<span class="tiny">${i}</span>`:`${i}${i<state.max?'<span class="tiny">⭐</span>':''}`}else html=`🔒<span class="tiny">${i}</span>`;nodes+=`<button class="${cls}" ${i<=state.max?`onclick="playLevel(${i})"`:''}>${html}</button>`}return `<div id="world-${wi}" class="worldSection ${w.cls}"><div class="worldRibbon">${w.from}–${w.to}</div><h2>${w.icon} ${worldName(w)}</h2><p>${state.max>w.to?'✅ '+t('unlocked'):state.max>=w.from?'🌟 '+t('continueAdventure'):'🔒 '+t('locked')}</p><div class="world">${nodes}</div></div>`}).join('')}
+function scrollWorld(i){$('world-'+i).scrollIntoView({behavior:'smooth',block:'start'})}function getWorld(level){return worlds.find(w=>level>=w.from&&level<=w.to)||worlds[0]}
+function playLevel(l){currentLevel=l;mode='adventure';correct=0;streak=0;showPage('game');setupGame()}
+let speedTimerInterval=null;
+let speedTimeLeft=30;
+
+function stopSpeedTimer(){
+  if(speedTimerInterval){
+    clearInterval(speedTimerInterval);
+    speedTimerInterval=null;
+  }
+  if(window.speedTimerWrap){
+    speedTimerWrap.style.display='none';
+    speedTimerWrap.classList.remove('danger');
+  }
+}
+
+function startSpeedTimer(){
+  stopSpeedTimer();
+  speedTimeLeft=30;
+  if(window.speedTimerWrap){
+    speedTimerWrap.style.display='flex';
+    speedTimer.classList.remove('danger');
+    speedTimer.textContent=speedTimeLeft;
+  }
+  speedTimerInterval=setInterval(()=>{
+    speedTimeLeft--;
+    if(window.speedTimer) speedTimer.textContent=Math.max(0,speedTimeLeft);
+    if(window.speedTimerWrap){
+      speedTimerWrap.classList.toggle('danger',speedTimeLeft<=10);
+    }
+    if(speedTimeLeft<=0){
+      stopSpeedTimer();
+      finishSpeedRound();
+    }
+  },1000);
+}
+
+function finishSpeedRound(){
+  // Prevent further answer taps until user chooses another mode/restarts.
+  if(window.answers){
+    answers.querySelectorAll('button').forEach(b=>b.disabled=true);
+  }
+  if(window.feedback){
+    feedback.textContent=`⏱️ Time's up! Score: ${correct}`;
+  }
+  if(window.question){
+    question.textContent=`🏁 ${correct} correct`;
+  }
+  if(soundOn && typeof playLevelUpSound==='function' && correct>0){
+    playLevelUpSound();
+  }
+  if(window.gameProg){
+    gameProg.style.width='100%';
+  }
+}
+
+function startMode(m){
+  stopSpeedTimer();
+  mode=m;
+  currentLevel=Math.max(1,state.max);
+  correct=0;
+  streak=0;
+  showPage('game');
+  setupGame();
+  if(mode==='speed') startSpeedTimer();
+}
+function setupGame(){
+  if(window.speedTimerWrap) speedTimerWrap.style.display=(mode==='speed'?'flex':'none');
+  let w=getWorld(Math.min(currentLevel,100));
+  gameWorldLabel.textContent=`${w.icon} ${worldName(w)}`;
+  gameLevel.textContent=mode==='adventure'?String(currentLevel):(mode==='agepractice'?state.ageBand:'★');
+  streak=0;
+  if(window.streak) $('streak').textContent='0';
+  correct=0;
+  correctCount.textContent='0';
+  targetCount.textContent=mode==='speed'?'10':(currentLevel%10===0&&mode==='adventure'?'8':'5');
+  gameProg.style.width='0';
+  feedback.textContent=currentLevel%10===0&&mode==='adventure'?'👑 Boss Battle!':'';
+  ensureGameStatLabels();
+  nextQ();
+}
+function r(a,b){return Math.floor(Math.random()*(b-a+1))+a}function makeQ(){
+  let a,b,ans,op;
+  if(mode==='agepractice'){
+    if(state.ageBand==='4-6'){
+      op=['+','-'][r(0,1)];
+      if(op==='+'){a=r(0,10);b=r(0,10-a);ans=a+b}
+      else{a=r(1,10);b=r(0,a);ans=a-b}
+    }else if(state.ageBand==='7-9'){
+      op=['+','-','×','÷'][r(0,3)];
+      if(op==='+'){a=r(5,100);b=r(1,100);ans=a+b}
+      else if(op==='-'){a=r(10,100);b=r(0,a);ans=a-b}
+      else if(op==='×'){a=r(2,10);b=r(2,10);ans=a*b}
+      else{b=r(2,10);ans=r(2,10);a=b*ans}
+    }else{
+      op=['+','-','×','÷'][r(0,3)];
+      if(op==='+'){a=r(100,9999);b=r(10,9999);ans=a+b}
+      else if(op==='-'){a=r(100,9999);b=r(0,a);ans=a-b}
+      else if(op==='×'){a=r(2,12);b=r(2,99);ans=a*b}
+      else{b=r(2,12);ans=r(2,99);a=b*ans}
+    }
+    return{text:`${a} ${op} ${b} = ?`,ans};
+  }
+  let tier=Math.max(1,Math.ceil(currentLevel/10));
+  let ops=mode==='tables'?['×']:tier<2?['+','-']:tier<4?['+','-','×']:['+','-','×','÷'];
+  if(mode==='mixed')ops=['+','-','×','÷'];
+  op=ops[r(0,ops.length-1)];
+  if(op==='+'){a=r(1,10+tier*3);b=r(1,10+tier*3);ans=a+b}
+  else if(op==='-'){a=r(5,15+tier*3);b=r(1,a);ans=a-b}
+  else if(op==='×'){a=r(2,Math.min(12,4+tier));b=r(2,12);ans=a*b}
+  else{b=r(2,Math.min(12,4+tier));ans=r(2,12);a=b*ans}
+  return{text:`${a} ${op} ${b} = ?`,ans}
+}
+function opts(a){let s=new Set([a]);while(s.size<4){let x=Math.max(0,a+r(-10,10));if(x!==a)s.add(x)}return[...s].sort(()=>Math.random()-.5)}function nextQ(){answerLocked=false;currentQ=makeQ();question.textContent=currentQ.text;answers.innerHTML=opts(currentQ.ans).map(v=>`<button class="ans" onclick="answer(${v})">${v}</button>`).join('');colorAnswerButtons()}
+let answerLocked=false;
+function answer(v){
+  if(answerLocked) return;
+  answerLocked=true;
+
+  let target=mode==='speed'?10:(currentLevel%10===0&&mode==='adventure'?8:5);
+
+  if(window.answers){
+    answers.querySelectorAll('button').forEach(b=>b.disabled=true);
+  }
+
+  if(v===currentQ.ans){
+    correct=Math.min(correct+1,target);
+    streak++;
+    state.coins+=2;
+    state.stars++;
+    addMission('correct',1);
+    addMission('coins',2);
+    if(streak>state.best)state.best=streak;
+
+    $('streak').textContent=streak;
+    correctCount.textContent=Math.min(correct,Number(targetCount.textContent)||correct);
+    gameProg.style.width=Math.min(100,correct/target*100)+'%';
+
+    correctFx();
+    feedback.textContent=t('correct')+' +2 🪙';
+    save();
+
+    if(correct>=target && mode!=='speed'){
+      correct=target;
+      correctCount.textContent=target;
+      gameProg.style.width='100%';
+      save();
+      setTimeout(()=>{
+        answerLocked=false;
+        winLevel();
+      },250);
+      return;
+    }
+  }else{
+    streak=0;
+    $('streak').textContent=streak;
+    correctCount.textContent=Math.min(correct,target);
+    gameProg.style.width=Math.min(100,correct/target*100)+'%';
+
+    wrongFx();
+    feedback.textContent=`${t('tryAgain')} ${currentQ.ans}`;
+    save();
+  }
+
+  setTimeout(()=>{
+    answerLocked=false;
+    nextQ();
+  },650);
+}
+function winLevel(){let boss=mode==='adventure'&&currentLevel%10===0,bonus=boss?30:10;state.coins+=bonus;addMission('coins',bonus);if(boss)state.gems+=3;if(mode==='adventure'){addMission('levels',1);if(currentLevel===state.max&&state.max<100)state.max++;if(currentLevel===100){state.gems+=10;state.max=100}}save();confetti();
+if(soundOn){
+  if(boss && typeof playBossWinSound==='function') playBossWinSound();
+  else if(typeof playLevelUpSound==='function') playLevelUpSound();
+}
+question.textContent=boss?t('bossDefeated'):t('levelComplete');answers.innerHTML=`<button class="cta primary" onclick="${mode==='adventure'?`playLevel(${Math.min(100,state.max)})`:`startMode('${mode}')`}">${t('continueAdventure')}</button>`;feedback.textContent=boss?'🪙 30 + 💎 3':'🪙 10';correctFx()}
+function updateDailyTreasureUI(){
+  let claimed=localStorage.getItem('ms_daily')===todayKey();
+  if(window.dailyClaimBtn){
+    dailyClaimBtn.disabled=claimed;
+    dailyClaimBtn.textContent=claimed?t('claimed'):t('claim');
+    dailyClaimBtn.style.opacity=claimed?'.62':'1';
+    dailyClaimBtn.style.cursor=claimed?'default':'pointer';
+  }
+  if(window.dailyText){
+    dailyText.textContent=claimed?t('alreadyClaimed'):t('dailyText');
+  }
+}
+
+function claimDaily(){
+  let today=todayKey();
+  let last=localStorage.getItem('ms_daily');
+
+  if(last===today){
+    updateDailyTreasureUI();
+    return;
+  }
+
+  localStorage.setItem('ms_daily',today);
+  state.coins+=25;
+  state.gems+=1;
+  state.stars+=5;
+  addMission('coins',25);
+  save();
+
+  if(window.dailyText){
+    dailyText.textContent='🪙25 • 💎1 • ⭐5 ✅';
+  }
+  if(window.dailyClaimBtn){
+    dailyClaimBtn.disabled=true;
+    dailyClaimBtn.textContent=t('claimed');
+    dailyClaimBtn.style.opacity='.62';
+    dailyClaimBtn.style.cursor='default';
+  }
+
+  confetti();
+  if(soundOn&&typeof playRewardSound==='function')playRewardSound();
+
+  setTimeout(updateDailyTreasureUI,1800);
+}
+const achievements=[['🌟','Star Starter',()=>state.stars>=10],['🪙','Coin Collector',()=>state.coins>=100],['🔥','Streak Star',()=>state.best>=5],['🗺️','Explorer',()=>state.max>=10],['👑','Boss Breaker',()=>state.max>=11],['🏆','Math Legend',()=>state.max>=100]];function renderRewards(){rewardGrid.innerHTML=achievements.map(a=>`<div class="card reward ${a[2]()?'':'locked'}"><div class="rIco">${a[0]}</div><h3>${a[1]}</h3><p>${a[2]()?t('unlocked'):t('keepLearning')}</p></div>`).join('')}
+function renderCertificates(){certificateGrid.innerHTML=worlds.map((w,i)=>{let ok=state.max>w.to||(w.to===100&&state.max===100);return `<div class="card certificate ${ok?'unlocked':'locked'}"><div class="seal">${ok?'🏅':'🔒'}</div><h3>${worldName(w)}</h3><p>${w.from}–${w.to}</p>${ok?`<button class="cta secondary" onclick="openCertificate(${i})">🏅 ${t('certificates')}</button>`:`<small>${t('keepLearning')}</small>`}</div>`}).join('')}
+function openCertificate(i){let w=worlds[i];$('certName').textContent=state.name;$('certWorld').textContent=`${w.icon} ${worldName(w)}`;$('certLevel').textContent=`${t('level')} ${w.from}–${w.to}`;$('certDate').textContent=new Intl.DateTimeFormat(state.lang,{dateStyle:'long'}).format(new Date());certificateModal.classList.add('show')}function closeCertificate(){certificateModal.classList.remove('show')}
+function buyItem(name,cost,type='coin'){if(type==='coin'){if(state.coins<cost){pop('🪙');return}state.coins-=cost}else{if(state.gems<cost){pop('💎');return}state.gems-=cost}save();confetti();pop(name+' ✨')}
+function pop(msg){feedback.textContent=msg;setTimeout(()=>{if(feedback.textContent===msg)feedback.textContent=''},1900)}
+function confetti(){let cs=['#ff6b6b','#6d5dfc','#2bc5a4','#ffbe45','#ff6fae','#55b8ff'];for(let i=0;i<34;i++){let c=document.createElement('i');c.className='confetti';c.style.left=(45+Math.random()*10)+'vw';c.style.top=(38+Math.random()*10)+'vh';c.style.background=cs[i%cs.length];c.style.setProperty('--x',((Math.random()*2-1)*300)+'px');c.style.setProperty('--y',(170+Math.random()*300)+'px');document.body.appendChild(c);setTimeout(()=>c.remove(),1000)}}
+function tone(f,d=.14,v=.035){if(!audioCtx)return;let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(v,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+d);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+d)}function initAudio(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume()}function correctFx(){
+      confetti();
+      if(soundOn){
+        if(typeof playCorrectSound==='function') playCorrectSound();
+        else {initAudio();[659,784,988].forEach((f,i)=>setTimeout(()=>tone(f),i*75));}
+      }
+    }function wrongFx(){
+      if(soundOn){
+        if(typeof playWrongSound==='function') playWrongSound();
+        else {initAudio();tone(220,.15);setTimeout(()=>tone(175,.2),100);}
+      }
+    }function toggleSound(){
+      initAudio();
+      soundOn=!soundOn;
+      soundBtn.textContent=soundOn?'🔊 On':'🎵 Off';
+      if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
+      if(soundOn){
+        if(typeof startKidsMusic==='function') startKidsMusic();
+      }else{
+        if(typeof stopKidsMusic==='function') stopKidsMusic();
+      }
+    }
+
+// Global language and structured curriculum upgrade
+Object.assign(I18N,{
+ms:{home:'Utama',worldMap:'Peta Dunia',game:'Permainan',rewards:'Ganjaran',heroTitle:'Main, Belajar & Jadi Wira Matematik! 🚀',heroText:'Bina keyakinan melalui cabaran matematik berwarna-warni dalam lima dunia ajaib.',continueAdventure:'Teruskan Pengembaraan',dailyReward:'Ganjaran Harian',myProfile:'Profil Saya',currentLevel:'Level Semasa',bestStreak:'Rekod Berturut',editProfile:'Edit Profil',chooseBuddy:'Pilih Rakan Belajar',dailyMissions:'Misi Harian',dailyTreasure:'Harta Harian',quickPlay:'Main Pantas',mathAdventure:'Pengembaraan Matematik',level:'Level',streak:'Berturut',certificates:'Sijil',correct:'Betul! 🌟',tryAgain:'Cubaan yang baik! Jawapan:',levelComplete:'Level selesai! 🎉',bossDefeated:'Boss dikalahkan! 👑🎉',worlds:{candy:'Dunia Gula-gula',ocean:'Dunia Lautan',space:'Dunia Angkasa',dino:'Dunia Dinosaur',future:'Bandar Masa Depan'}},
+id:{home:'Beranda',worldMap:'Peta Dunia',game:'Permainan',rewards:'Hadiah',heroTitle:'Bermain, Belajar & Jadi Pahlawan Matematika! 🚀',heroText:'Bangun percaya diri lewat tantangan matematika berwarna-warni di lima dunia ajaib.',continueAdventure:'Lanjutkan Petualangan',dailyReward:'Hadiah Harian',myProfile:'Profil Saya',currentLevel:'Level Saat Ini',bestStreak:'Rekor Beruntun',editProfile:'Edit Profil',chooseBuddy:'Pilih Teman Belajar',dailyMissions:'Misi Harian',dailyTreasure:'Harta Harian',quickPlay:'Main Cepat',mathAdventure:'Petualangan Matematika',level:'Level',streak:'Beruntun',certificates:'Sertifikat',correct:'Benar! 🌟',tryAgain:'Bagus mencoba! Jawaban:',levelComplete:'Level selesai! 🎉',bossDefeated:'Boss dikalahkan! 👑🎉',worlds:{candy:'Dunia Permen',ocean:'Dunia Laut',space:'Dunia Angkasa',dino:'Dunia Dinosaurus',future:'Kota Masa Depan'}},
+th:{home:'หน้าหลัก',worldMap:'แผนที่โลก',game:'เกม',rewards:'รางวัล',heroTitle:'เล่น เรียนรู้ และเป็นฮีโร่คณิตศาสตร์! 🚀',heroText:'สร้างความมั่นใจด้วยโจทย์คณิตศาสตร์สีสันสดใสในห้าโลกมหัศจรรย์',continueAdventure:'ผจญภัยต่อ',dailyReward:'รางวัลรายวัน',myProfile:'โปรไฟล์ของฉัน',currentLevel:'เลเวลปัจจุบัน',bestStreak:'สถิติต่อเนื่อง',editProfile:'แก้ไขโปรไฟล์',chooseBuddy:'เลือกเพื่อนเรียน',dailyMissions:'ภารกิจรายวัน',dailyTreasure:'สมบัติรายวัน',quickPlay:'เล่นด่วน',mathAdventure:'ผจญภัยคณิตศาสตร์',level:'เลเวล',streak:'ต่อเนื่อง',certificates:'ใบประกาศ',correct:'ถูกต้อง! 🌟',tryAgain:'พยายามได้ดี! คำตอบ:',levelComplete:'ผ่านเลเวล! 🎉',bossDefeated:'ชนะบอสแล้ว! 👑🎉',worlds:{candy:'โลกขนม',ocean:'โลกมหาสมุทร',space:'โลกอวกาศ',dino:'โลกไดโนเสาร์',future:'เมืองอนาคต'}},
+fil:{home:'Home',worldMap:'Mapa ng Mundo',game:'Laro',rewards:'Gantimpala',heroTitle:'Maglaro, Matuto at Maging Math Hero! 🚀',heroText:'Palakasin ang kumpiyansa sa makukulay na hamon sa matematika sa limang mahiwagang mundo.',continueAdventure:'Ituloy ang Adventure',dailyReward:'Araw-araw na Gantimpala',myProfile:'Aking Profile',currentLevel:'Kasalukuyang Level',bestStreak:'Pinakamahusay na Streak',editProfile:'I-edit ang Profile',chooseBuddy:'Pumili ng Learning Buddy',dailyMissions:'Araw-araw na Misyon',dailyTreasure:'Araw-araw na Kayamanan',quickPlay:'Mabilis na Laro',mathAdventure:'Math Adventure',level:'Level',streak:'Streak',certificates:'Mga Sertipiko',correct:'Tama! 🌟',tryAgain:'Magandang subok! Sagot:',levelComplete:'Tapos ang level! 🎉',bossDefeated:'Natalo ang boss! 👑🎉',worlds:{candy:'Candy World',ocean:'Ocean World',space:'Space World',dino:'Dinosaur World',future:'Future City'}},
+vi:{home:'Trang chủ',worldMap:'Bản đồ',game:'Trò chơi',rewards:'Phần thưởng',heroTitle:'Chơi, Học & Trở Thành Anh Hùng Toán Học! 🚀',heroText:'Xây dựng sự tự tin với các thử thách toán học đầy màu sắc qua năm thế giới kỳ diệu.',continueAdventure:'Tiếp tục phiêu lưu',dailyReward:'Quà hằng ngày',myProfile:'Hồ sơ của tôi',currentLevel:'Cấp hiện tại',bestStreak:'Chuỗi tốt nhất',editProfile:'Sửa hồ sơ',chooseBuddy:'Chọn bạn học',dailyMissions:'Nhiệm vụ hằng ngày',dailyTreasure:'Kho báu hằng ngày',quickPlay:'Chơi nhanh',mathAdventure:'Phiêu lưu Toán học',level:'Cấp',streak:'Chuỗi',certificates:'Chứng nhận',correct:'Đúng rồi! 🌟',tryAgain:'Cố gắng tốt! Đáp án:',levelComplete:'Hoàn thành cấp! 🎉',bossDefeated:'Đã đánh bại boss! 👑🎉',worlds:{candy:'Thế giới Kẹo',ocean:'Thế giới Đại dương',space:'Thế giới Không gian',dino:'Thế giới Khủng long',future:'Thành phố Tương lai'}},
+ko:{home:'홈',worldMap:'월드 맵',game:'게임',rewards:'보상',heroTitle:'놀고, 배우고, 수학 영웅이 되자! 🚀',heroText:'다섯 개의 마법 세계에서 다채로운 수학 도전으로 자신감을 키워요.',continueAdventure:'모험 계속하기',dailyReward:'일일 보상',myProfile:'내 프로필',currentLevel:'현재 레벨',bestStreak:'최고 연속 기록',editProfile:'프로필 수정',chooseBuddy:'학습 친구 선택',dailyMissions:'일일 미션',dailyTreasure:'일일 보물',quickPlay:'빠른 플레이',mathAdventure:'수학 모험',level:'레벨',streak:'연속',certificates:'인증서',correct:'정답! 🌟',tryAgain:'좋은 시도예요! 정답:',levelComplete:'레벨 완료! 🎉',bossDefeated:'보스 격파! 👑🎉',worlds:{candy:'캔디 월드',ocean:'오션 월드',space:'스페이스 월드',dino:'공룡 월드',future:'미래 도시'}},
+ja:{home:'ホーム',worldMap:'ワールドマップ',game:'ゲーム',rewards:'ごほうび',heroTitle:'遊んで、学んで、算数ヒーローになろう！🚀',heroText:'5つの魔法の世界でカラフルな算数チャレンジに挑戦し、自信を育てます。',continueAdventure:'冒険を続ける',dailyReward:'デイリー報酬',myProfile:'マイプロフィール',currentLevel:'現在のレベル',bestStreak:'ベスト連続記録',editProfile:'プロフィール編集',chooseBuddy:'学習バディを選ぶ',dailyMissions:'デイリーミッション',dailyTreasure:'デイリー宝箱',quickPlay:'クイックプレイ',mathAdventure:'算数アドベンチャー',level:'レベル',streak:'連続',certificates:'修了証',correct:'せいかい！🌟',tryAgain:'よく挑戦したね！答え:',levelComplete:'レベルクリア！🎉',bossDefeated:'ボスを倒した！👑🎉',worlds:{candy:'キャンディワールド',ocean:'オーシャンワールド',space:'スペースワールド',dino:'恐竜ワールド',future:'未来都市'}}
+});
+['ms','id','th','fil','vi','ko','ja'].forEach(c=>I18N[c]=Object.assign({},I18N.en,I18N[c],{worlds:Object.assign({},I18N.en.worlds,I18N[c].worlds||{})}));
+const CURRICULUM={'4-6':[[1,10,'Numbers & counting 0–20','numbers'],[11,20,'Compare, order & number patterns','numbers'],[21,30,'Addition within 10','addition'],[31,40,'Subtraction within 10','subtraction'],[41,50,'Addition & subtraction within 20','addsub'],[51,60,'Shapes, sides & simple geometry','geometry'],[61,70,'Time: hours & daily routines','time'],[71,80,'Money & simple coin totals','money'],[81,90,'Early multiplication: groups of 2, 5 & 10','multiplication'],[91,100,'Story problems & review','word']], '7-9':[[1,10,'Place value & number sense','numbers'],[11,20,'Addition with larger numbers','addition'],[21,30,'Subtraction with larger numbers','subtraction'],[31,40,'Multiplication facts & arrays','multiplication'],[41,50,'Division & equal groups','division'],[51,60,'Fractions: halves, thirds & quarters','fractions'],[61,70,'Money: totals & change','money'],[71,80,'Time, duration & schedules','time'],[81,90,'Geometry: perimeter, shapes & angles','geometry'],[91,100,'Multi-step word problems & review','word']], '10-12':[[1,10,'Large numbers, place value & rounding','numbers'],[11,20,'Multi-digit addition & subtraction','addsub'],[21,30,'Multiplication strategies','multiplication'],[31,40,'Division & remainders','division'],[41,50,'Fractions: equivalence & operations','fractions'],[51,60,'Decimals & money','money'],[61,70,'Time, rates & practical measurement','time'],[71,80,'Geometry: perimeter, area & angles','geometry'],[81,90,'Mixed operations & number reasoning','mixed'],[91,100,'Multi-step real-world word problems','word']]};
+function curriculumFor(l){return (CURRICULUM[state.ageBand]||CURRICULUM['7-9']).find(x=>l>=x[0]&&l<=x[1])}
+function objectiveFor(l){let x=curriculumFor(l),s=l-x[0]+1;return `${x[2]} • Step ${s}/10`}
+function setAgeBand(v){
+  state.ageBand=v;
+  localStorage.setItem('ms_age',v);
+  renderCurriculum();
+  renderMap();
+  setupObjectiveOnly();
+  pop('📚 '+v);
+  startAgePractice(v);
+}
+function startAgePractice(v){
+  stopSpeedTimer();
+  mode='agepractice';
+  correct=0;
+  streak=0;
+  // Start each age band at a representative difficulty, while keeping the 100-level adventure untouched.
+  currentLevel = v==='4-6' ? 1 : (v==='7-9' ? 31 : 61);
+  showPage('game');
+  setupGame();
+}
+function renderCurriculum(){document.querySelectorAll('.ageBtn').forEach(b=>b.classList.toggle('active',b.dataset.age===state.ageBand));let ms=state.lang==='ms',id=state.lang==='id';learningPathTitle.textContent=ms?'Laluan Pembelajaran':id?'Jalur Belajar':'Learning Path';ageHeading.textContent=ms?'Pilih kumpulan umur':id?'Pilih kelompok usia':'Choose age group';ageHelp.textContent=ms?'Kurikulum 100 level disesuaikan mengikut tahap pembelajaran kanak-kanak.':id?'Kurikulum 100 level disesuaikan dengan tahap belajar anak.':'The 100-level curriculum adapts to the child’s learning stage.';currentObjectiveLabel.textContent=ms?'Objektif pembelajaran semasa':id?'Tujuan belajar saat ini':'Current learning objective';objectiveLabel.textContent=ms?'Objektif pembelajaran':id?'Tujuan belajar':'Learning objective';homeObjective.textContent=objectiveFor(state.max)}
+function setupObjectiveOnly(){if(window.gameObjective)gameObjective.textContent=objectiveFor(currentLevel||state.max)}
+const _applyLanguage=applyLanguage;applyLanguage=function(){_applyLanguage();renderCurriculum();setupObjectiveOnly()};const _renderUI=renderUI;renderUI=function(){_renderUI();renderCurriculum();setupObjectiveOnly()};const _setupGame=setupGame;setupGame=function(){_setupGame();setupObjectiveOnly()};
+function makeCurriculumQuestion(){let row=curriculumFor(currentLevel),topic=mode==='tables'?'multiplication':mode==='mixed'?'mixed':row[3],age=state.ageBand,max=age==='4-6'?20:age==='7-9'?100:500,a,b,ans,text;if(topic==='numbers'||topic==='addition'){a=r(1,max);b=r(1,Math.min(max,40));ans=a+b;text=`${a} + ${b} = ?`}else if(topic==='subtraction'||topic==='addsub'){a=r(5,max);b=r(1,a);ans=a-b;text=`${a} − ${b} = ?`}else if(topic==='multiplication'){a=r(2,age==='4-6'?10:12);b=r(2,age==='4-6'?5:12);ans=a*b;text=`${a} × ${b} = ?`}else if(topic==='division'){b=r(2,12);ans=r(2,12);a=b*ans;text=`${a} ÷ ${b} = ?`}else if(topic==='fractions'){let den=[2,3,4,5,8][r(0,age==='10-12'?4:2)],num=r(1,den-1),whole=den*r(1,6);ans=whole*num/den;text=`${num}/${den} of ${whole} = ?`}else if(topic==='money'){let price=r(2,age==='4-6'?15:50),paid=Math.ceil(price/5)*5+5;ans=paid-price;text=`🪙 Pay ${paid}, cost ${price}. Change = ?`}else if(topic==='time'){let start=r(1,10),hours=r(1,age==='4-6'?3:6);ans=start+hours;if(ans>12)ans-=12;text=`🕒 ${start}:00 + ${hours} hour${hours>1?'s':''} = ?`}else if(topic==='geometry'){if(age==='10-12'){a=r(2,12);b=r(2,12);ans=2*(a+b);text=`▭ Perimeter: ${a} × ${b} rectangle = ?`}else{let sh=[[3,'triangle'],[4,'square'],[5,'pentagon'],[6,'hexagon']][r(0,3)];ans=sh[0];text=`🔷 How many sides does a ${sh[1]} have?`}}else if(topic==='word'){a=r(2,age==='4-6'?10:30);b=r(1,age==='4-6'?8:25);ans=a+b;text=`📖 Mia has ${a} stars and earns ${b} more. How many now?`}else{let op=['+','−','×','÷'][r(0,3)];if(op==='+'){a=r(5,max);b=r(2,max);ans=a+b}else if(op==='−'){a=r(5,max);b=r(1,a);ans=a-b}else if(op==='×'){a=r(2,12);b=r(2,12);ans=a*b}else{b=r(2,12);ans=r(2,12);a=b*ans}text=`${a} ${op} ${b} = ?`}return{text,ans}}
+makeQ=function(){return makeCurriculumQuestion()};
+const _renderMap=renderMap;renderMap=function(){_renderMap();document.querySelectorAll('.worldSection').forEach((el,i)=>{let w=worlds[i],mid=Math.max(w.from,Math.min(state.max,w.to)),p=el.querySelector('p');if(p){let o=document.createElement('p');o.className='worldObjective';o.textContent='🎓 '+objectiveFor(mid);p.after(o)}})};
+renderCurriculum();
+
+applyLanguage();
+
+// ===== Happier & Clearer Kids Audio Upgrade =====
+let msAudioCtx = null;
+let msMasterGain = null;
+let msMusicTimer = null;
+let msMusicStep = 0;
+
+function getMSAudio(){
+  if(!msAudioCtx){
+    const AC = window.AudioContext || window.webkitAudioContext;
+    msAudioCtx = new AC();
+    msMasterGain = msAudioCtx.createGain();
+    msMasterGain.gain.value = 0.78; // louder master volume
+    msMasterGain.connect(msAudioCtx.destination);
+  }
+  if(msAudioCtx.state === 'suspended') msAudioCtx.resume();
+  return msAudioCtx;
+}
+
+function msTone(freq, duration=0.16, type='sine', vol=0.28, when=0){
+  const ctx = getMSAudio();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, ctx.currentTime + when);
+  gain.gain.setValueAtTime(0.0001, ctx.currentTime + when);
+  gain.gain.exponentialRampToValueAtTime(vol, ctx.currentTime + when + 0.012);
+  gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + when + duration);
+  osc.connect(gain);
+  gain.connect(msMasterGain);
+  osc.start(ctx.currentTime + when);
+  osc.stop(ctx.currentTime + when + duration + 0.03);
+}
+
+function msSparkle(base=1000, when=0){
+  msTone(base, .07, 'triangle', .16, when);
+  msTone(base*1.25, .07, 'triangle', .13, when+.05);
+}
+
+function playCorrectSound(){
+  // bright cheerful 4-note success jingle
+  msTone(659.25,.15,'triangle',.34,0);
+  msTone(783.99,.15,'triangle',.34,.10);
+  msTone(987.77,.16,'triangle',.36,.20);
+  msTone(1318.51,.28,'sine',.34,.31);
+  msSparkle(1500,.39);
+}
+
+function playWrongSound(){
+  // soft, clear and non-scary retry sound
+  msTone(392,.16,'triangle',.23,0);
+  msTone(329.63,.18,'triangle',.22,.12);
+  msTone(293.66,.24,'sine',.18,.24);
+}
+
+function playLevelUpSound(){
+  const notes=[523.25,659.25,783.99,1046.5,1318.5];
+  notes.forEach((n,i)=>msTone(n,.18,'triangle',.31,i*.085));
+  msTone(1567.98,.36,'sine',.30,.44);
+  msSparkle(1900,.49);
+}
+
+function playBossWinSound(){
+  const notes=[392,523.25,659.25,783.99,1046.5,1318.5];
+  notes.forEach((n,i)=>msTone(n,.20,i<3?'square':'triangle',.25,i*.10));
+  msTone(1567.98,.42,'triangle',.34,.62);
+  msSparkle(2100,.70);
+}
+
+function playRewardSound(){
+  msTone(880,.12,'triangle',.30,0);
+  msTone(1108.73,.12,'triangle',.30,.10);
+  msTone(1318.51,.15,'triangle',.32,.20);
+  msTone(1760,.30,'sine',.28,.32);
+  msSparkle(2200,.38);
+}
+
+function playClickSound(){
+  msTone(880,.055,'sine',.10,0);
+}
+
+function stopKidsMusic(){
+  if(msMusicTimer){
+    clearInterval(msMusicTimer);
+    msMusicTimer=null;
+  }
+}
+
+function startKidsMusic(){
+  stopKidsMusic();
+  getMSAudio();
+  // upbeat pentatonic-style loop; light enough to sit behind gameplay
+  const melody=[523.25,659.25,783.99,659.25,880,783.99,659.25,587.33,
+                523.25,659.25,783.99,1046.5,880,783.99,659.25,523.25];
+  const bass=[261.63,261.63,293.66,293.66,329.63,329.63,293.66,261.63];
+  msMusicStep=0;
+  msMusicTimer=setInterval(()=>{
+    if(typeof musicOn !== 'undefined' && !musicOn) return;
+    const n=melody[msMusicStep%melody.length];
+    msTone(n,.20,'triangle',.085,0);
+    if(msMusicStep%2===0){
+      msTone(bass[(msMusicStep/2)%bass.length],.28,'sine',.055,0);
+    }
+    if(msMusicStep%4===0) msTone(1567.98,.035,'square',.025,.02);
+    msMusicStep++;
+  },235);
+}
+
+// Compatibility aliases: replace/override older game sound functions if present.
+try{
+  window.correctSound = playCorrectSound;
+  window.wrongSound = playWrongSound;
+  window.levelUpSound = playLevelUpSound;
+  window.rewardSound = playRewardSound;
+  window.bossSound = playBossWinSound;
+  window.playCorrect = playCorrectSound;
+  window.playWrong = playWrongSound;
+  window.playWin = playLevelUpSound;
+  window.playReward = playRewardSound;
+}catch(e){}
+
+// Capture clicks on key reward/game controls for subtle feedback
+document.addEventListener('click', (e)=>{
+  const el=e.target.closest('button,.btn,.ageBtn,.buddy,.buddyCard,.levelNode,.mapLevel');
+  if(soundOn && el && el.id!=='soundBtn' && !(el.id||'').toLowerCase().includes('music')){
+    try{ playClickSound(); }catch(_){}
+  }
+},{passive:true});
+
+// If the existing music toggle changes text/state, sync our new soundtrack too.
+document.addEventListener('click',(e)=>{
+  const el=e.target.closest('#soundBtn,#musicBtn,.musicBtn,[onclick*="music"],[onclick*="Music"]');
+  if(!el) return;
+  setTimeout(()=>{
+    let on = false;
+    if(typeof soundOn !== 'undefined') on=!!soundOn;
+    else if(typeof musicOn !== 'undefined') on=!!musicOn;
+    else on=/on|🔊|music: on/i.test(el.textContent||'');
+    if(on) startKidsMusic(); else stopKidsMusic();
+  },60);
+});
+
+// Stronger integration with common feedback text updates.
+// Mutation observer detects game feedback and fires appropriate jingle once.
+let msLastFeedback='';
+const msObs=new MutationObserver(()=>{
+  const txt=document.body.innerText||'';
+  const candidates=[
+    ['Boss defeated','boss'],['Boss dikalahkan','boss'],['boss','boss'],
+    ['Level complete','level'],['Level selesai','level'],['level clear','level'],
+
+    ['chest','reward'],['reward claimed','reward'],['Ganjaran harian dituntut','reward']
+  ];
+  if(!soundOn) return;
+  for(const [phrase,type] of candidates){
+    if(txt.includes(phrase) && msLastFeedback!==phrase){
+      msLastFeedback=phrase;
+      if(type==='boss') playBossWinSound();
+      else if(type==='level') playLevelUpSound();
+      else if(type==='correct') playCorrectSound();
+      else if(type==='wrong') playWrongSound();
+      else if(type==='reward') playRewardSound();
+      setTimeout(()=>{ if(msLastFeedback===phrase) msLastFeedback=''; },900);
+      break;
+    }
+  }
+});
+window.addEventListener('DOMContentLoaded',()=>{
+  msObs.observe(document.body,{subtree:true,childList:true,characterData:true});
+});
+
+
+function ensureGameStatLabels(){
+  const levelLabel=document.querySelector('#game .stat [data-i18n="level"]');
+  const streakLabel=document.querySelector('#game .stat [data-i18n="streak"]');
+  if(levelLabel && !levelLabel.textContent.trim()) levelLabel.textContent='Level';
+  if(streakLabel && !streakLabel.textContent.trim()) streakLabel.textContent='Streak';
+}
+
+
+const mathSparkAnswerColors=[
+  'linear-gradient(135deg,#E9DDFF,#D7C6FF)',
+  'linear-gradient(135deg,#FFF3C4,#FFE095)',
+  'linear-gradient(135deg,#D8FBEA,#B7F1D2)',
+  'linear-gradient(135deg,#FFD8E9,#FFB8D7)'
+];
+
+function colorAnswerButtons(){
+  if(!window.answers) return;
+  const buttons=[...answers.querySelectorAll('.ans')];
+  const colors=[...mathSparkAnswerColors].sort(()=>Math.random()-.5);
+  buttons.forEach((button,index)=>{
+    button.style.background=colors[index % colors.length];
+  });
+}
+
+</script></body></html>
