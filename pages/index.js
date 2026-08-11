@@ -160,7 +160,7 @@ if (premiumResponse.ok && premiumResult.premium) {
 
           if (response.ok) {
             setIsPremium(true);
-            window.location.href = "/";
+            window.location.href = "/index.html";
           } else {
             alert("Payment completion failed");
           }
